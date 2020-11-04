@@ -10,12 +10,13 @@ library(genefilter)
 
 # The following setting is important, do not omit.
 options(stringsAsFactors = FALSE);
-#Read in the data set
-#tcgaData = read.delim("GBM_HiSeqV2_PANCAN");
+allowWGCNAThreads()
 
-rawGBM= read.csv("GBM_HiSeqV2_PANCAN",sep = "\t",header = T,row.names=1)
-rawOV= read.csv("OV_HiSeqV2_PANCAN",sep = "\t",header = T,row.names=1)
-rawBRCA= read.csv("BRCA_HiSeqV2_PANCAN",sep = "\t",header = T,row.names=1)
+#Read in the data set
+
+rawGBM= read.csv("./data/GBM_HiSeqV2_PANCAN", sep = "\t", header = T, row.names=1)
+rawOV= read.csv("./data/OV_HiSeqV2_PANCAN", sep = "\t", header = T, row.names=1)
+rawBRCA= read.csv("./data/BRCA_HiSeqV2_PANCAN", sep = "\t", header = T, row.names=1)
 
 
 # Take a quick look at what is in the data set:
@@ -26,31 +27,19 @@ dim(rawBRCA);
 
 x<- as.matrix(rawGBM)
 filteredGBM<- genefilter::varFilter(x, var.func = IQR, 
-            var.cutoff = 0.75, filterByQuantile = TRUE)
+            var.cutoff = 0.5, filterByQuantile = TRUE)
 dim(filteredGBM)
 
 y<- as.matrix(rawOV)
 filteredOV<- genefilter::varFilter(y, var.func = IQR, 
-            var.cutoff = 0.75, filterByQuantile = TRUE)
+            var.cutoff = 0.5, filterByQuantile = TRUE)
 dim(filteredOV)
 
 z<- as.matrix(rawBRCA)
 filteredBRCA<- genefilter::varFilter(z, var.func = IQR, 
-            var.cutoff = 0.75, filterByQuantile = TRUE)
+            var.cutoff = 0.5, filterByQuantile = TRUE)
 dim(filteredBRCA)
-#######filtering##################
-#f1 <- pOverA(0.25, 2)
-#f2 <- function(x) (IQR(x) > 0.5)
-#ff <- filterfun(f1, f2)
-#filtered_data <- tcgaData[genefilter(tcgaData, ff), ]
-#dim(filtered_data)
 
-#f1 <- pOverA(0.8, 4)
-#f2 <- function(x) (IQR(x) > 0.5)
-#ff <- filterfun(f1, f2)
-#interested_genes<- tcgaData[genefilter(tcgaData, ff), ]
-#dim(interested_genes)
-###################################
 gbmExpr = as.data.frame(t(filteredGBM[,]))
 dim(gbmExpr)
 
@@ -59,12 +48,6 @@ dim(ovExpr)
 
 brcaExpr = as.data.frame(t(filteredBRCA[,]))
 dim(brcaExpr)
-
-#datExpr0 = as.data.frame(t(tcgaData[, -c(1)]))
-#names(datExpr0) = tcgaData$sample;
-
-#rownames(datExpr0) = tcgaData$Subject
-#names(datExpr0) = tcgaData$Subject
 
 ###################################
 gbm = goodSamplesGenes(gbmExpr , verbose = 3);
@@ -112,36 +95,35 @@ if (!brca$allOK)
 }
 
 
-
-
 gbmPatientTree = hclust(dist(gbmExpr), method = "average")
-sizeGrWindow(12,9)
-#pdf(file = "Patient_Clustering.pdf", width = 12, height = 9);
-par(cex = 0.6);
-par(mar = c(0,4,2,0))
+png(file = "./results/1_Sample_Clustering_GBM.png", width = 1400, height = 1500);
+par(cex = 1.0);
+par(mar = c(1,1,1,1))
 plot(gbmPatientTree , main = "GBM patient clustering", 
 		sub="", xlab="", cex.lab = 1.5,cex.axis = 1.5, cex.main = 2)
-
+dev.off()
 
 ovPatientTree = hclust(dist(ovExpr), method = "average")
-sizeGrWindow(12,9)
-par(cex = 0.6);
-par(mar = c(0,4,2,0))
+sizeGrWindow(14,10)
+png(file = "./results/1_Sample_Clustering_OV.png", width = 1400, height = 1500);
+par(cex = 1.0);
+par(mar = c(1,1,1,1))
 plot(ovPatientTree , main = "OV patient clustering", 
 		sub="", xlab="", cex.lab = 1.5,cex.axis = 1.5, cex.main = 2)
-
+dev.off()
 
 
 brcaPatientTree = hclust(dist(brcaExpr), method = "average")
-sizeGrWindow(12,9)
-par(cex = 0.6);
-par(mar = c(0,4,2,0))
+sizeGrWindow(14,10)
+png(file = "./results/1_Sample_Clustering_BRCA.png", width = 1400, height = 1500);
+par(cex = 1.0);
+par(mar = c(1,1,1,1))
 plot(brcaPatientTree , main = "BRCA patient clustering", 
 		sub="", xlab="", cex.lab = 1.5,cex.axis = 1.5, cex.main = 2)
+dev.off()
 
 
-
-save(gbmExpr, ovExpr, brcaExpr, file = "1-dataInput.RData")
+save(gbmExpr, ovExpr, brcaExpr, file = "./Routput/1-dataInput.RData")
 
 collectGarbage()
 

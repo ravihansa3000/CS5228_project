@@ -1,0 +1,51 @@
+GO.ID Term Annotated Significant Expected weightFisher p.adj
+GO:0002281 macrophage activation involved in immune... 11 2 0.06 0.0015 1
+GO:0042535 positive regulation of tumor necrosis fa... 17 2 0.09 0.0037 1
+GO:0031290 retinal ganglion cell axon guidance 19 2 0.1 0.0046 1
+GO:1903403 negative regulation of renal phosphate e... 1 1 0.01 0.0054 1
+GO:0060945 cardiac neuron differentiation 1 1 0.01 0.0054 1
+GO:0032752 positive regulation of interleukin-3 pro... 1 1 0.01 0.0054 1
+GO:0048613 embryonic ectodermal digestive tract mor... 1 1 0.01 0.0054 1
+GO:0061368 behavioral response to formalin induced ... 1 1 0.01 0.0054 1
+GO:0014822 detection of wounding 1 1 0.01 0.0054 1
+GO:0060806 negative regulation of cell differentiat... 1 1 0.01 0.0054 1
+GO:0003421 growth plate cartilage axis specificatio... 1 1 0.01 0.0054 1
+GO:0045919 positive regulation of cytolysis 1 1 0.01 0.0054 1
+GO:0106028 neuron projection retraction 1 1 0.01 0.0054 1
+GO:0060461 right lung morphogenesis 1 1 0.01 0.0054 1
+GO:0015920 lipopolysaccharide transport 1 1 0.01 0.0054 1
+GO:0021524 visceral motor neuron differentiation 1 1 0.01 0.0054 1
+GO:0033345 asparagine catabolic process via L-aspar... 1 1 0.01 0.0054 1
+GO:0051389 inactivation of MAPKK activity 2 1 0.01 0.0108 1
+GO:0060265 positive regulation of respiratory burst... 2 1 0.01 0.0108 1
+GO:0099557 trans-synaptic signaling by trans-synapt... 2 1 0.01 0.0108 1
+GO:0043366 beta selection 2 1 0.01 0.0108 1
+GO:0048371 lateral mesodermal cell differentiation 2 1 0.01 0.0108 1
+GO:0098887 neurotransmitter receptor transport, end... 2 1 0.01 0.0108 1
+GO:0045425 positive regulation of granulocyte macro... 2 1 0.01 0.0108 1
+GO:0002930 trabecular meshwork development 2 1 0.01 0.0108 1
+GO:0003408 optic cup formation involved in camera-t... 2 1 0.01 0.0108 1
+GO:0006589 octopamine biosynthetic process 2 1 0.01 0.0108 1
+GO:1904782 negative regulation of NMDA glutamate re... 2 1 0.01 0.0108 1
+GO:0140039 cell-cell adhesion in response to extrac... 2 1 0.01 0.0108 1
+GO:2001076 positive regulation of metanephric urete... 2 1 0.01 0.0108 1
+GO:0038083 peptidyl-tyrosine autophosphorylation 34 2 0.18 0.0143 1
+GO:0007356 thorax and anterior abdomen determinatio... 3 1 0.02 0.0161 1
+GO:0071226 cellular response to molecule of fungal ... 3 1 0.02 0.0161 1
+GO:0048499 synaptic vesicle membrane organization 3 1 0.02 0.0161 1
+GO:0022614 membrane to membrane docking 3 1 0.02 0.0161 1
+GO:0090403 oxidative stress-induced premature senes... 3 1 0.02 0.0161 1
+GO:0048170 positive regulation of long-term neurona... 3 1 0.02 0.0161 1
+GO:0071603 endothelial cell-cell adhesion 3 1 0.02 0.0161 1
+GO:0002554 serotonin secretion by platelet 3 1 0.02 0.0161 1
+GO:0032757 positive regulation of interleukin-8 pro... 37 2 0.2 0.0168 1
+GO:0043068 positive regulation of programmed cell d... 359 4 1.94 0.0208 1
+GO:0006954 inflammatory response 510 9 2.75 0.0212 1
+GO:0038156 interleukin-3-mediated signaling pathway 4 1 0.02 0.0214 1
+GO:0010957 negative regulation of vitamin D biosynt... 4 1 0.02 0.0214 1
+GO:0097267 omega-hydroxylase P450 pathway 4 1 0.02 0.0214 1
+GO:1904783 positive regulation of NMDA glutamate re... 4 1 0.02 0.0214 1
+GO:0072520 seminiferous tubule development 4 1 0.02 0.0214 1
+GO:0021553 olfactory nerve development 4 1 0.02 0.0214 1
+GO:0061030 epithelial cell differentiation involved... 4 1 0.02 0.0214 1
+GO:0048013 ephrin receptor signaling pathway 43 2 0.23 0.0223 1

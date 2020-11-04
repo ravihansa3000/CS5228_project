@@ -8,8 +8,8 @@ library(WGCNA)
 library(GeneOverlap)
 
 
-lnames = load(file = "02-networkConstruction.RData");
-lnames = load(file = "1-dataInput.RData");
+lnames = load(file = "./Routput/2-networkConstruction.RData");
+lnames = load(file = "./Routput/1-dataInput.RData");
 
 
 dim(gbmExpr)
@@ -260,19 +260,19 @@ topGO_GeneEnrichment_ToFile <- function(prefix, topGOEnrichment)
 bg_genes = names(gbmExpr)
 
 gbm_ov_gene_overlap = findGeneOverlap(gbmExpr, ovExpr, gbmModuleColors, ovModuleColors, gbmMEs, ovMEs)
-geneOverlap_ToFile("GBM_OV", gbm_ov_gene_overlap)
+geneOverlap_ToFile("./results/4_GBM_OV", gbm_ov_gene_overlap)
 gbm_ov_topGOEnrichment = topGO_GeneEnrichment(bg_genes, gbm_ov_gene_overlap)
-topGO_GeneEnrichment_ToFile("GBM_OV", gbm_ov_topGOEnrichment)
+topGO_GeneEnrichment_ToFile("./results/4_GBM_OV", gbm_ov_topGOEnrichment)
 
 ov_brca_gene_overlap = findGeneOverlap(ovExpr, brcaExpr, ovModuleColors, brcaModuleColors, ovMEs, brcaMEs)
-geneOverlap_ToFile("OV_BRCA", ov_brca_gene_overlap)
+geneOverlap_ToFile("./results/4_OV_BRCA", ov_brca_gene_overlap)
 ov_brca_topGOEnrichment = topGO_GeneEnrichment(bg_genes, ov_brca_gene_overlap)
-topGO_GeneEnrichment_ToFile("OV_BRCA", ov_brca_topGOEnrichment)
+topGO_GeneEnrichment_ToFile("./results/4_OV_BRCA", ov_brca_topGOEnrichment)
 
 brca_gbm_gene_overlap = findGeneOverlap(brcaExpr, gbmExpr, brcaModuleColors, gbmModuleColors, brcaMEs, gbmMEs)
-geneOverlap_ToFile("BRCA_GBM", brca_gbm_gene_overlap)
+geneOverlap_ToFile("./results/4_BRCA_GBM", brca_gbm_gene_overlap)
 brca_gbm_topGOEnrichment = topGO_GeneEnrichment(bg_genes, brca_gbm_gene_overlap)
-topGO_GeneEnrichment_ToFile("BRCA_GBM", brca_gbm_topGOEnrichment)
+topGO_GeneEnrichment_ToFile("./results/4_BRCA_GBM", brca_gbm_topGOEnrichment)
 
 
 

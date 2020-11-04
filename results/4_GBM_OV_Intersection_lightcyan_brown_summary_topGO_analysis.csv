@@ -1,0 +1,51 @@
+GO.ID Term Annotated Significant Expected weightFisher p.adj
+GO:0035617 stress granule disassembly 1 1 0 0.0018 1
+GO:0090315 negative regulation of protein targeting... 1 1 0 0.0018 1
+GO:1990743 protein sialylation 2 1 0 0.0037 1
+GO:0090663 galanin-activated signaling pathway 2 1 0 0.0037 1
+GO:0035063 nuclear speck organization 2 1 0 0.0037 1
+GO:0016973 poly(A)+ mRNA export from nucleus 4 1 0.01 0.0073 1
+GO:0061179 negative regulation of insulin secretion... 5 1 0.01 0.0092 1
+GO:0043518 negative regulation of DNA damage respon... 7 1 0.01 0.0128 1
+GO:1902260 negative regulation of delayed rectifier... 7 1 0.01 0.0128 1
+GO:0001675 acrosome assembly 7 1 0.01 0.0128 1
+GO:1903432 regulation of TORC1 signaling 8 1 0.01 0.0146 1
+GO:0034198 cellular response to amino acid starvati... 11 1 0.02 0.0201 1
+GO:0098915 membrane repolarization during ventricul... 12 1 0.02 0.0219 1
+GO:0097623 potassium ion export across plasma membr... 14 1 0.03 0.0255 1
+GO:0045954 positive regulation of natural killer ce... 15 1 0.03 0.0273 1
+GO:0045109 intermediate filament organization 15 1 0.03 0.0273 1
+GO:0007194 negative regulation of adenylate cyclase... 15 1 0.03 0.0273 1
+GO:0000303 response to superoxide 15 1 0.03 0.0273 1
+GO:1902751 positive regulation of cell cycle G2/M p... 15 1 0.03 0.0273 1
+GO:0070936 protein K48-linked ubiquitination 16 1 0.03 0.0291 1
+GO:0060307 regulation of ventricular cardiac muscle... 16 1 0.03 0.0291 1
+GO:0043171 peptide catabolic process 17 1 0.03 0.0309 1
+GO:1990542 mitochondrial transmembrane transport 20 1 0.04 0.0362 1
+GO:0097421 liver regeneration 23 1 0.04 0.0416 1
+GO:0009409 response to cold 30 1 0.06 0.0539 1
+GO:0016266 O-glycan processing 32 1 0.06 0.0574 1
+GO:0051881 regulation of mitochondrial membrane pot... 32 1 0.06 0.0574 1
+GO:1901381 positive regulation of potassium ion tra... 33 1 0.06 0.0592 1
+GO:0086091 regulation of heart rate by cardiac cond... 34 1 0.06 0.0609 1
+GO:0071320 cellular response to cAMP 37 1 0.07 0.0661 1
+GO:0070268 cornification 43 1 0.08 0.0764 1
+GO:0018107 peptidyl-threonine phosphorylation 46 1 0.08 0.0815 1
+GO:1902600 proton transmembrane transport 53 1 0.1 0.0934 1
+GO:0030218 erythrocyte differentiation 54 1 0.1 0.0951 1
+GO:0070542 response to fatty acid 61 1 0.11 0.1068 1
+GO:0120162 positive regulation of cold-induced ther... 64 1 0.12 0.1117 1
+GO:0035710 CD4-positive, alpha-beta T cell activati... 71 1 0.13 0.1232 1
+GO:0007631 feeding behavior 71 1 0.13 0.1232 1
+GO:0009566 fertilization 96 1 0.18 0.1632 1
+GO:0032869 cellular response to insulin stimulus 102 1 0.19 0.1725 1
+GO:0007605 sensory perception of sound 106 1 0.2 0.1787 1
+GO:0007565 female pregnancy 119 1 0.22 0.1984 1
+GO:0006886 intracellular protein transport 345 3 0.64 0.1986 1
+GO:0043066 negative regulation of apoptotic process 466 2 0.86 0.2105 1
+GO:0006470 protein dephosphorylation 134 1 0.25 0.2206 1
+GO:0007156 homophilic cell adhesion via plasma memb... 147 1 0.27 0.2394 1
+GO:0018105 peptidyl-serine phosphorylation 155 1 0.29 0.2508 1
+GO:0007188 adenylate cyclase-modulating G protein-c... 157 1 0.29 0.2536 1
+GO:0007568 aging 172 1 0.32 0.2744 1
+GO:0007611 learning or memory 177 1 0.33 0.2812 1

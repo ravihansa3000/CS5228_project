@@ -13,9 +13,12 @@ options(stringsAsFactors = FALSE);
 # Any error here may be ignored but you may want to update WGCNA if you see one.
 # Caution: skip this line if you run RStudio or other third-party R environments.
 # See note above.
-enableWGCNAThreads()
+# enableWGCNAThreads()
+
+allowWGCNAThreads()
+
 # Load the data saved in the first part
-lnames = load(file = "1-dataInput.RData");
+lnames = load(file = "./Routput/1-dataInput.RData");
 #The variable lnames contains the names of loaded variables.
 lnames
 dim(gbmExpr)
@@ -28,8 +31,7 @@ dim(brcaExpr)
 powers = c(c(1:10), seq(from = 12, to=20, by=2))
 # Call the network topology analysis function
 sft = pickSoftThreshold(gbmExpr, powerVector = powers, verbose = 5)
-# Plot the results:
-sizeGrWindow(9, 5)
+png(file = "./results/2_SFTM_Fit_GBM.png", width = 700, height = 700);
 par(mfrow = c(1,2));
 cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
@@ -40,11 +42,15 @@ text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
 labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
 abline(h=0.90,col="red")
+dev.off()
+
 # Mean connectivity as a function of the soft-thresholding power
+png(file = "./results/2_Mean_Connectivity_GBM.png", width = 700, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
 xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
 main = paste("Mean connectivity"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
+dev.off()
 
 #################ovExpr######################
 
@@ -52,8 +58,7 @@ text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 powers = c(c(1:10), seq(from = 12, to=20, by=2))
 # Call the network topology analysis function
 sft = pickSoftThreshold(ovExpr, powerVector = powers, verbose = 5)
-# Plot the results:
-sizeGrWindow(9, 5)
+png(file = "./results/2_SFTM_Fit_OV.png", width = 700, height = 700);
 par(mfrow = c(1,2));
 cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
@@ -64,12 +69,15 @@ text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
 labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
 abline(h=0.90,col="red")
+dev.off()
+
 # Mean connectivity as a function of the soft-thresholding power
+png(file = "./results/2_Mean_Connectivity_OV.png", width = 700, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
 xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
 main = paste("Mean connectivity"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
-
+dev.off()
 
 #################brcaExpr######################
 
@@ -77,8 +85,7 @@ text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 powers = c(c(1:10), seq(from = 12, to=20, by=2))
 # Call the network topology analysis function
 sft = pickSoftThreshold(brcaExpr, powerVector = powers, verbose = 5)
-# Plot the results:
-sizeGrWindow(9, 5)
+png(file = "./results/2_SFTM_Fit_BRCA.png", width = 700, height = 700);
 par(mfrow = c(1,2));
 cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
@@ -89,16 +96,19 @@ text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
 labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
 abline(h=0.90,col="red")
+dev.off()
+
 # Mean connectivity as a function of the soft-thresholding power
+png(file = "./results/2_Mean_Connectivity_BRCA.png", width = 700, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
 xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
 main = paste("Mean connectivity"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
+dev.off()
 
 
 
-
-#############GBM##################################################################################################3
+############# GBM ##################################################################################################
 ##Co-expression similarity and adjacency
 softPower = 8;
 adjacency = adjacency(gbmExpr, power = softPower);
@@ -110,13 +120,7 @@ dissTOM = 1-TOM
 
 # Call the hierarchical clustering function
 gbmGeneTree = hclust(as.dist(dissTOM), method = "average");
-# Plot the resulting clustering tree (dendrogram)
-sizeGrWindow(12,9)
-plot(gbmGeneTree, xlab="", sub="", main = "Gene clustering on TOM-based dissimilarity",
-labels = FALSE, hang = 0.04);
 
-
-############################################3
 # We like large modules, so we set the minimum module size relatively high:
 minModuleSize = 30;
 # Module identification using dynamic tree cut:
@@ -124,12 +128,11 @@ dynamicMods = cutreeDynamic(dendro = gbmGeneTree, distM = dissTOM,
 							deepSplit = 2, pamRespectsDendro = FALSE,
 							minClusterSize = minModuleSize);
 table(dynamicMods)
-#####################################3
+
 # Convert numeric lables into colors
 dynamicColors = labels2colors(dynamicMods)
 table(dynamicColors)
 # Plot the dendrogram and colors underneath
-sizeGrWindow(8,6)
 plotDendroAndColors(gbmGeneTree, dynamicColors, "Dynamic Tree Cut",
 					dendroLabels = FALSE, hang = 0.03,
 					addGuide = TRUE, guideHang = 0.05,
@@ -146,15 +149,15 @@ gbmModuleColors = merge$colors;
 # Eigengenes of the new merged modules:
 gbmMEs = merge$newMEs;
 
-sizeGrWindow(12, 9)
-#pdf(file = "Plots/geneDendro-3.pdf", wi = 9, he = 6)
+png(file = "./results/2_Clustering_Tree_GBM.png",width=10,height=10,units="in",res=1200);
 plotDendroAndColors(gbmGeneTree, cbind(dynamicColors, gbmModuleColors),
 					c("Dynamic Tree Cut", "Merged dynamic"),
+					main = "Gene Dendrogram and Module Colors - GBM",
 					dendroLabels = FALSE, hang = 0.03,
 					addGuide = TRUE, guideHang = 0.05)
-#dev.off()
+dev.off()
 
-#############OV##################################################################################################3
+############# OV ##################################################################################################
 ##Co-expression similarity and adjacency
 softPower = 6;
 adjacency = adjacency(ovExpr, power = softPower);
@@ -163,7 +166,6 @@ adjacency = adjacency(ovExpr, power = softPower);
 TOM = TOMsimilarity(adjacency);
 dissTOM = 1-TOM
 
-
 # Call the hierarchical clustering function
 ovGeneTree = hclust(as.dist(dissTOM), method = "average");
 # Plot the resulting clustering tree (dendrogram)
@@ -171,8 +173,6 @@ sizeGrWindow(12,9)
 plot(ovGeneTree, xlab="", sub="", main = "Gene clustering on TOM-based dissimilarity",
 labels = FALSE, hang = 0.04);
 
-
-############################################3
 # We like large modules, so we set the minimum module size relatively high:
 minModuleSize = 30;
 # Module identification using dynamic tree cut:
@@ -202,15 +202,17 @@ ovModuleColors = merge$colors;
 # Eigengenes of the new merged modules:
 ovMEs = merge$newMEs;
 
-sizeGrWindow(12, 9)
-#pdf(file = "Plots/geneDendro-3.pdf", wi = 9, he = 6)
+
+png(file = "./results/2_Clustering_Tree_OV.png",width=10,height=10,units="in",res=1200);
 plotDendroAndColors(ovGeneTree, cbind(dynamicColors, ovModuleColors),
 					c("Dynamic Tree Cut", "Merged dynamic"),
+					main = "Gene Dendrogram and Module Colors - OV",
 					dendroLabels = FALSE, hang = 0.03,
 					addGuide = TRUE, guideHang = 0.05)
-#dev.off()
+dev.off()
 
-#############BRCA##################################################################################################3
+
+############# BRCA ##################################################################################################
 ##Co-expression similarity and adjacency
 softPower = 6;
 adjacency = adjacency(brcaExpr, power = softPower);
@@ -219,16 +221,9 @@ adjacency = adjacency(brcaExpr, power = softPower);
 TOM = TOMsimilarity(adjacency);
 dissTOM = 1-TOM
 
-
 # Call the hierarchical clustering function
 brcaGeneTree = hclust(as.dist(dissTOM), method = "average");
-# Plot the resulting clustering tree (dendrogram)
-sizeGrWindow(12,9)
-plot(brcaGeneTree, xlab="", sub="", main = "Gene clustering on TOM-based dissimilarity",
-labels = FALSE, hang = 0.04);
 
-
-############################################3
 # We like large modules, so we set the minimum module size relatively high:
 minModuleSize = 30;
 # Module identification using dynamic tree cut:
@@ -236,18 +231,11 @@ dynamicMods = cutreeDynamic(dendro = brcaGeneTree, distM = dissTOM,
 							deepSplit = 2, pamRespectsDendro = FALSE,
 							minClusterSize = minModuleSize);
 table(dynamicMods)
-#####################################3
+
 # Convert numeric lables into colors
 dynamicColors = labels2colors(dynamicMods)
 table(dynamicColors)
-# Plot the dendrogram and colors underneath
-sizeGrWindow(8,6)
-plotDendroAndColors(brcaGeneTree, dynamicColors, "Dynamic Tree Cut",
-					dendroLabels = FALSE, hang = 0.03,
-					addGuide = TRUE, guideHang = 0.05,
-					main = "Gene dendrogram and module colors")
 
-########################################
 MEDissThres = 0.25
 # Plot the cut line into the dendrogram
 abline(h=MEDissThres, col = "red")
@@ -259,21 +247,24 @@ brcaModuleColors = merge$colors;
 brcaMEs = merge$newMEs;
 
 sizeGrWindow(12, 9)
-#pdf(file = "Plots/geneDendro-3.pdf", wi = 9, he = 6)
+png(file = "./results/2_Clustering_Tree_BRCA.png",width=10,height=10,units="in",res=1200);
 plotDendroAndColors(brcaGeneTree, cbind(dynamicColors, brcaModuleColors),
 					c("Dynamic Tree Cut", "Merged dynamic"),
+					main = "Gene Dendrogram and Module Colors - BRCA",
 					dendroLabels = FALSE, hang = 0.03,
 					addGuide = TRUE, guideHang = 0.05)
-#dev.off()
+dev.off()
+
 
 ###########################################################################################################
-sizeGrWindow(12, 9)
-#pdf(file = "Plots/geneDendro-3.pdf", wi = 9, he = 6)
+
+png(file = "./results/2_Clustering_Tree_ALL.png",width=10,height=10,units="in",res=1200);
 plotDendroAndColors(cbind(gbmModuleColors, ovModuleColors, brcaModuleColors),
 					c("GBM", "OV", "BRCA"),
+					main = "Gene Dendrogram and Module Colors - All",
 					dendroLabels = FALSE, hang = 0.03,
 					addGuide = TRUE, guideHang = 0.05)
-
+dev.off()
 
 # Construct numerical labels corresponding to the colors
 colorOrder = c("grey", standardColors(50));
@@ -285,5 +276,5 @@ brcaModuleLabels = match(brcaModuleColors, colorOrder)-1;
 save(gbmMEs, gbmModuleLabels, gbmModuleColors, gbmGeneTree,
 	ovMEs, ovModuleLabels, ovModuleColors, ovGeneTree,
 	brcaMEs, brcaModuleLabels, brcaModuleColors, brcaGeneTree,
- 	file = "02-networkConstruction.RData")
+ 	file = "./Routput/2-networkConstruction.RData")
 

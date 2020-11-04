@@ -1,0 +1,51 @@
+GO.ID Term Annotated Significant Expected weightFisher p.adj
+GO:1902616 acyl carnitine transmembrane transport 1 1 0 0.0028 1
+GO:0046498 S-adenosylhomocysteine metabolic process 1 1 0 0.0028 1
+GO:0030449 regulation of complement activation 33 2 0.09 0.0036 1
+GO:0031064 negative regulation of histone deacetyla... 2 1 0.01 0.0055 1
+GO:0010593 negative regulation of lamellipodium ass... 2 1 0.01 0.0055 1
+GO:1901052 sarcosine metabolic process 2 1 0.01 0.0055 1
+GO:2000360 negative regulation of binding of sperm ... 2 1 0.01 0.0055 1
+GO:0045792 negative regulation of cell size 2 1 0.01 0.0055 1
+GO:0089709 L-histidine transmembrane transport 3 1 0.01 0.0083 1
+GO:1990575 mitochondrial L-ornithine transmembrane ... 3 1 0.01 0.0083 1
+GO:0006798 polyphosphate catabolic process 3 1 0.01 0.0083 1
+GO:0015811 L-cystine transport 3 1 0.01 0.0083 1
+GO:0060455 negative regulation of gastric acid secr... 4 1 0.01 0.0110 1
+GO:0051461 positive regulation of corticotropin sec... 4 1 0.01 0.0110 1
+GO:0006975 DNA damage induced protein phosphorylati... 4 1 0.01 0.0110 1
+GO:1903401 L-lysine transmembrane transport 4 1 0.01 0.0110 1
+GO:0035483 gastric emptying 4 1 0.01 0.0110 1
+GO:0040009 regulation of growth rate 5 1 0.01 0.0137 1
+GO:0061302 smooth muscle cell-matrix adhesion 5 1 0.01 0.0137 1
+GO:0006032 chitin catabolic process 5 1 0.01 0.0137 1
+GO:0015889 cobalamin transport 5 1 0.01 0.0137 1
+GO:2000252 negative regulation of feeding behavior 5 1 0.01 0.0137 1
+GO:2000987 positive regulation of behavioral fear r... 6 1 0.02 0.0165 1
+GO:0006555 methionine metabolic process 6 1 0.02 0.0165 1
+GO:1902237 positive regulation of endoplasmic retic... 6 1 0.02 0.0165 1
+GO:0046500 S-adenosylmethionine metabolic process 6 1 0.02 0.0165 1
+GO:0032099 negative regulation of appetite 6 1 0.02 0.0165 1
+GO:1903400 L-arginine transmembrane transport 6 1 0.02 0.0165 1
+GO:0030157 pancreatic juice secretion 7 1 0.02 0.0192 1
+GO:0009235 cobalamin metabolic process 8 1 0.02 0.0219 1
+GO:0015867 ATP transport 8 1 0.02 0.0219 1
+GO:0042756 drinking behavior 9 1 0.02 0.0246 1
+GO:0034384 high-density lipoprotein particle cleara... 9 1 0.02 0.0246 1
+GO:0060547 negative regulation of necrotic cell dea... 9 1 0.02 0.0246 1
+GO:0010468 regulation of gene expression 2033 4 5.62 0.0258 1
+GO:0030949 positive regulation of vascular endothel... 10 1 0.03 0.0273 1
+GO:0034199 activation of protein kinase A activity 10 1 0.03 0.0273 1
+GO:0043001 Golgi to plasma membrane protein transpo... 11 1 0.03 0.0300 1
+GO:0060452 positive regulation of cardiac muscle co... 11 1 0.03 0.0300 1
+GO:0006957 complement activation, alternative pathw... 11 1 0.03 0.0300 1
+GO:1902287 semaphorin-plexin signaling pathway invo... 12 1 0.03 0.0327 1
+GO:0036342 post-anal tail morphogenesis 12 1 0.03 0.0327 1
+GO:0043950 positive regulation of cAMP-mediated sig... 12 1 0.03 0.0327 1
+GO:0006111 regulation of gluconeogenesis 13 1 0.04 0.0354 1
+GO:0032967 positive regulation of collagen biosynth... 14 1 0.04 0.0380 1
+GO:0043117 positive regulation of vascular permeabi... 15 1 0.04 0.0407 1
+GO:0007565 female pregnancy 119 2 0.33 0.0421 1
+GO:0009060 aerobic respiration 16 1 0.04 0.0433 1
+GO:0090280 positive regulation of calcium ion impor... 17 1 0.05 0.0460 1
+GO:0090207 regulation of triglyceride metabolic pro... 17 1 0.05 0.0460 1

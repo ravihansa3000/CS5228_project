@@ -1,0 +1,51 @@
+GO.ID Term Annotated Significant Expected weightFisher p.adj
+GO:0000002 mitochondrial genome maintenance 7 0 0 1 1
+GO:0000003 reproduction 789 0 0 1 1
+GO:0000012 single strand break repair 1 0 0 1 1
+GO:0000017 alpha-glucoside transport 1 0 0 1 1
+GO:0000018 regulation of DNA recombination 33 0 0 1 1
+GO:0000022 mitotic spindle elongation 7 0 0 1 1
+GO:0000023 maltose metabolic process 1 0 0 1 1
+GO:0000027 ribosomal large subunit assembly 4 0 0 1 1
+GO:0000028 ribosomal small subunit assembly 8 0 0 1 1
+GO:0000038 very long-chain fatty acid metabolic pro... 16 0 0 1 1
+GO:0000041 transition metal ion transport 58 0 0 1 1
+GO:0000045 autophagosome assembly 14 0 0 1 1
+GO:0000050 urea cycle 10 0 0 1 1
+GO:0000052 citrulline metabolic process 5 0 0 1 1
+GO:0000053 argininosuccinate metabolic process 1 0 0 1 1
+GO:0000070 mitotic sister chromatid segregation 64 0 0 1 1
+GO:0000075 cell cycle checkpoint 90 0 0 1 1
+GO:0000076 DNA replication checkpoint 8 0 0 1 1
+GO:0000077 DNA damage checkpoint 55 0 0 1 1
+GO:0000079 regulation of cyclin-dependent protein s... 56 0 0 1 1
+GO:0000082 G1/S transition of mitotic cell cycle 121 0 0 1 1
+GO:0000083 regulation of transcription involved in ... 18 0 0 1 1
+GO:0000086 G2/M transition of mitotic cell cycle 86 0 0 1 1
+GO:0000096 sulfur amino acid metabolic process 17 0 0 1 1
+GO:0000097 sulfur amino acid biosynthetic process 7 0 0 1 1
+GO:0000098 sulfur amino acid catabolic process 7 0 0 1 1
+GO:0000101 sulfur amino acid transport 4 0 0 1 1
+GO:0000103 sulfate assimilation 2 0 0 1 1
+GO:0000117 regulation of transcription involved in ... 1 0 0 1 1
+GO:0000122 negative regulation of transcription by ... 437 0 0 1 1
+GO:0000132 establishment of mitotic spindle orienta... 11 0 0 1 1
+GO:0000154 rRNA modification 2 0 0 1 1
+GO:0000165 MAPK cascade 527 0 0 1 1
+GO:0000183 rDNA heterochromatin assembly 2 0 0 1 1
+GO:0000184 nuclear-transcribed mRNA catabolic proce... 43 0 0 1 1
+GO:0000185 activation of MAPKKK activity 5 0 0 1 1
+GO:0000186 activation of MAPKK activity 25 0 0 1 1
+GO:0000187 activation of MAPK activity 92 0 0 1 1
+GO:0000188 inactivation of MAPK activity 15 0 0 1 1
+GO:0000209 protein polyubiquitination 101 0 0 1 1
+GO:0000212 meiotic spindle organization 7 0 0 1 1
+GO:0000226 microtubule cytoskeleton organization 271 0 0 1 1
+GO:0000245 spliceosomal complex assembly 13 0 0 1 1
+GO:0000255 allantoin metabolic process 1 0 0 1 1
+GO:0000256 allantoin catabolic process 1 0 0 1 1
+GO:0000266 mitochondrial fission 14 0 0 1 1
+GO:0000270 peptidoglycan metabolic process 2 0 0 1 1
+GO:0000271 polysaccharide biosynthetic process 41 0 0 1 1
+GO:0000272 polysaccharide catabolic process 11 0 0 1 1
+GO:0000278 mitotic cell cycle 405 0 0 1 1
