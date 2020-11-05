@@ -273,27 +273,3 @@ brca_gbm_gene_overlap = findGeneOverlap(brcaExpr, gbmExpr, brcaModuleColors, gbm
 geneOverlap_ToFile("./results/4_BRCA_GBM", brca_gbm_gene_overlap)
 brca_gbm_topGOEnrichment = topGO_GeneEnrichment(bg_genes, brca_gbm_gene_overlap)
 topGO_GeneEnrichment_ToFile("./results/4_BRCA_GBM", brca_gbm_topGOEnrichment)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,6 +8,9 @@ setwd(workingDir);
 # Load the WGCNA package
 library(WGCNA)
 
+# Use gplots for heatmap color panel (fix color mapping)
+library(gplots)
+
 # The following setting is important, do not omit.
 options(stringsAsFactors = FALSE);
 allowWGCNAThreads()
@@ -24,29 +27,18 @@ nGenes = ncol(gbmExpr)
 nSamples = nrow(gbmExpr)
 
 
-##############################################
-
-# Calculate topological overlap anew: this could be done more efficiently by saving the TOM
-# calculated during module detection, but let us do it again here.
-dissTOM = 1-TOMsimilarityFromExpr(gbmExpr, power = 6);
-
-nSelect = 400
-set.seed(10);
-select = sample(nGenes, size = nSelect);
-selectTOM = dissTOM[select, select];
-selectTree = hclust(as.dist(selectTOM), method = "average")
-selectColors = gbmModuleColors[select];
-
+#################### GBM ##########################
 
 png(file = "./results/3_Network_heatmap_GBM.png",width=10,height=10,units="in",res=1200);
 # Taking the dissimilarity to a power, say 10, makes the plot more informative by effectively changing
 # the color palette; setting the diagonal to NA also improves the clarity of the plot
-plotDiss = selectTOM^7;
+plotDiss = gbmDissTOM^7;
 diag(plotDiss) = NA;
-TOMplot(plotDiss, selectTree, selectColors, main = "Network heatmap plot - GBM, selected genes")
+myheatcol = colorpanel(250,'red',"orange",'lemonchiffon')
+TOMplot(plotDiss, gbmGeneTree, gbmModuleColors, main = "Network Heatmap Plot - GBM, All Genes", col=myheatcol)
 dev.off()
 
-##############################################
+
 ###Visualizing the network of eigengenes######
 MEs = moduleEigengenes(gbmExpr, gbmModuleColors)$eigengenes
 n_MEs = ncol(MEs)
@@ -55,5 +47,67 @@ sample_MEs = nrow(MEs)
 # Plot the dendrogram
 png(file = "./results/3_Eigengene_dendrogram_GBM.png",width=10,height=10,units="in",res=1200);
 par(cex = 1.0)
-plotEigengeneNetworks(MEs , "Eigengene dendrogram - GBM", marDendro = c(0,4,2,0), plotHeatmaps = FALSE)
+plotEigengeneNetworks(MEs , "Eigengene Dendrogram - GBM", marDendro = c(0,4,2,0), plotHeatmaps = FALSE)
 dev.off()
+
+# Plot the heatmap matrix
+png(file = "./results/3_Eigengene_heatmap_GBM.png",width=10,height=10,units="in",res=1200);
+par(cex = 1.0)
+plotEigengeneNetworks(MEs, "Eigengene Adjacency Heatmap - GBM", marDendro = c(0,4,2,0), plotDendrograms = FALSE, xLabelsAngle = 90)
+dev.off()
+
+##################### OV #######################
+
+png(file = "./results/3_Network_heatmap_OV.png",width=10,height=10,units="in",res=1200);
+# Taking the dissimilarity to a power, say 10, makes the plot more informative by effectively changing
+# the color palette; setting the diagonal to NA also improves the clarity of the plot
+plotDiss = ovDissTOM^7;
+diag(plotDiss) = NA;
+TOMplot(plotDiss, ovGeneTree, ovModuleColors, main = "Network Heatmap Plot - OV, All Genes", col=myheatcol)
+dev.off()
+
+###Visualizing the network of eigengenes######
+MEs = moduleEigengenes(ovExpr, ovModuleColors)$eigengenes
+n_MEs = ncol(MEs)
+sample_MEs = nrow(MEs)
+
+# Plot the dendrogram
+png(file = "./results/3_Eigengene_dendrogram_OV.png",width=10,height=10,units="in",res=1200);
+par(cex = 1.0)
+plotEigengeneNetworks(MEs , "Eigengene Dendrogram - OV", marDendro = c(0,4,2,0), plotHeatmaps = FALSE)
+dev.off()
+
+# Plot the heatmap matrix
+png(file = "./results/3_Eigengene_heatmap_OV.png",width=10,height=10,units="in",res=1200);
+par(cex = 1.0)
+plotEigengeneNetworks(MEs, "Eigengene Adjacency Heatmap - OV", marDendro = c(0,4,2,0), plotDendrograms = FALSE, xLabelsAngle = 90)
+dev.off()
+
+
+##################### BRCA #######################
+
+png(file = "./results/3_Network_heatmap_BRCA.png",width=10,height=10,units="in",res=1200);
+# Taking the dissimilarity to a power, say 10, makes the plot more informative by effectively changing
+# the color palette; setting the diagonal to NA also improves the clarity of the plot
+plotDiss = brcaDissTOM^7;
+diag(plotDiss) = NA;
+TOMplot(plotDiss, brcaGeneTree, brcaModuleColors, main = "Network Heatmap Plot - BRCA, All Genes")
+dev.off()
+
+###Visualizing the network of eigengenes######
+MEs = moduleEigengenes(brcaExpr, brcaModuleColors)$eigengenes
+n_MEs = ncol(MEs)
+sample_MEs = nrow(MEs)
+
+# Plot the dendrogram
+png(file = "./results/3_Eigengene_dendrogram_BRCA.png",width=10,height=10,units="in",res=1200);
+par(cex = 1.0)
+plotEigengeneNetworks(MEs , "Eigengene Dendrogram - BRCA", marDendro = c(0,4,2,0), plotHeatmaps = FALSE)
+dev.off()
+
+# Plot the heatmap matrix
+png(file = "./results/3_Eigengene_heatmap_BRCA.png",width=10,height=10,units="in",res=1200);
+par(cex = 1.0)
+plotEigengeneNetworks(MEs, "Eigengene Adjacency Heatmap - BRCA", marDendro = c(0,4,2,0), plotDendrograms = FALSE, xLabelsAngle = 90)
+dev.off()
+
