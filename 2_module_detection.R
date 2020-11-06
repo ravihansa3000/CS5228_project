@@ -31,13 +31,12 @@ dim(brcaExpr)
 powers = c(c(1:10), seq(from = 12, to=20, by=2))
 # Call the network topology analysis function
 sft = pickSoftThreshold(gbmExpr, powerVector = powers, verbose = 5)
-png(file = "./results/2_SFTM_Fit_GBM.png", width = 700, height = 700);
-par(mfrow = c(1,2));
+png(file = "./results/2_SFTM_Fit_GBM.png", width = 600, height = 700);
 cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
 plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
-     xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit,signed R^2",type="n",
-     main = paste("Scale independence"));
+     xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit (signed R^2)",type="n",
+     main = paste("Scale Independence"));
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
@@ -45,10 +44,10 @@ abline(h=0.90,col="red")
 dev.off()
 
 # Mean connectivity as a function of the soft-thresholding power
-png(file = "./results/2_Mean_Connectivity_GBM.png", width = 700, height = 700);
+png(file = "./results/2_Mean_Connectivity_GBM.png", width = 600, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
      xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
-     main = paste("Mean connectivity"))
+     main = paste("Mean Connectivity"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 dev.off()
 
@@ -58,13 +57,12 @@ dev.off()
 powers = c(c(1:10), seq(from = 12, to=20, by=2))
 # Call the network topology analysis function
 sft = pickSoftThreshold(ovExpr, powerVector = powers, verbose = 5)
-png(file = "./results/2_SFTM_Fit_OV.png", width = 700, height = 700);
-par(mfrow = c(1,2));
+png(file = "./results/2_SFTM_Fit_OV.png", width = 600, height = 700);
 cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
 plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
-     xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit,signed R^2",type="n",
-     main = paste("Scale independence"));
+     xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit (signed R^2)",type="n",
+     main = paste("Scale Independence"));
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
@@ -72,10 +70,10 @@ abline(h=0.90,col="red")
 dev.off()
 
 # Mean connectivity as a function of the soft-thresholding power
-png(file = "./results/2_Mean_Connectivity_OV.png", width = 700, height = 700);
+png(file = "./results/2_Mean_Connectivity_OV.png", width = 600, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
      xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
-     main = paste("Mean connectivity"))
+     main = paste("Mean Connectivity"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 dev.off()
 
@@ -85,13 +83,12 @@ dev.off()
 powers = c(c(1:10), seq(from = 12, to=20, by=2))
 # Call the network topology analysis function
 sft = pickSoftThreshold(brcaExpr, powerVector = powers, verbose = 5)
-png(file = "./results/2_SFTM_Fit_BRCA.png", width = 700, height = 700);
-par(mfrow = c(1,2));
+png(file = "./results/2_SFTM_Fit_BRCA.png", width = 600, height = 700);
 cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
 plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
-     xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit,signed R^2",type="n",
-     main = paste("Scale independence"));
+     xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit (signed R^2)",type="n",
+     main = paste("Scale Independence"));
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
@@ -99,10 +96,10 @@ abline(h=0.90,col="red")
 dev.off()
 
 # Mean connectivity as a function of the soft-thresholding power
-png(file = "./results/2_Mean_Connectivity_BRCA.png", width = 700, height = 700);
+png(file = "./results/2_Mean_Connectivity_BRCA.png", width = 600, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
      xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
-     main = paste("Mean connectivity"))
+     main = paste("Mean Connectivity"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 dev.off()
 
@@ -133,15 +130,14 @@ table(dynamicMods)
 dynamicColors = labels2colors(dynamicMods)
 table(dynamicColors)
 # Plot the dendrogram and colors underneath
-plotDendroAndColors(gbmGeneTree, dynamicColors, "Dynamic Tree Cut",
-                    dendroLabels = FALSE, hang = 0.03,
-                    addGuide = TRUE, guideHang = 0.05,
-                    main = "Gene dendrogram and module colors")
+#plotDendroAndColors(gbmGeneTree, dynamicColors, "Dynamic Tree Cut",
+#                    dendroLabels = FALSE, hang = 0.03,
+#                    addGuide = TRUE, guideHang = 0.05,
+#                    main = "Gene Dendrogram and Module Colors - GBM")
 
 ########################################
 MEDissThres = 0.25
-# Plot the cut line into the dendrogram
-abline(h=MEDissThres, col = "red")
+
 # Call an automatic merging function
 merge = mergeCloseModules(gbmExpr, dynamicColors, cutHeight = MEDissThres, verbose = 3)
 # The merged module colors
@@ -151,10 +147,12 @@ gbmMEs = merge$newMEs;
 
 png(file = "./results/2_Clustering_Tree_GBM.png",width=10,height=10,units="in",res=1200);
 plotDendroAndColors(gbmGeneTree, cbind(dynamicColors, gbmModuleColors),
-                    c("Dynamic Tree Cut", "Merged dynamic"),
+                    c("Dynamic Tree Cut", "Merged Dynamic"),
                     main = "Gene Dendrogram and Module Colors - GBM",
                     dendroLabels = FALSE, hang = 0.03,
                     addGuide = TRUE, guideHang = 0.05)
+# Plot the cut line into the dendrogram
+abline(h=MEDissThres, col = "red")
 dev.off()
 
 ############# OV ##################################################################################################
@@ -168,10 +166,6 @@ ovDissTOM = 1-TOM
 
 # Call the hierarchical clustering function
 ovGeneTree = hclust(as.dist(ovDissTOM), method = "average");
-# Plot the resulting clustering tree (dendrogram)
-sizeGrWindow(12,9)
-plot(ovGeneTree, xlab="", sub="", main = "Gene clustering on TOM-based dissimilarity",
-     labels = FALSE, hang = 0.04);
 
 # We like large modules, so we set the minimum module size relatively high:
 minModuleSize = 30;
@@ -185,16 +179,15 @@ table(dynamicMods)
 dynamicColors = labels2colors(dynamicMods)
 table(dynamicColors)
 # Plot the dendrogram and colors underneath
-sizeGrWindow(8,6)
-plotDendroAndColors(ovGeneTree, dynamicColors, "Dynamic Tree Cut",
-                    dendroLabels = FALSE, hang = 0.03,
-                    addGuide = TRUE, guideHang = 0.05,
-                    main = "Gene dendrogram and module colors")
+#sizeGrWindow(8,6)
+#plotDendroAndColors(ovGeneTree, dynamicColors, "Dynamic Tree Cut",
+#                    dendroLabels = FALSE, hang = 0.03,
+#                    addGuide = TRUE, guideHang = 0.05,
+#                    main = "Gene dendrogram and module colors")
 
 ########################################
 MEDissThres = 0.25
-# Plot the cut line into the dendrogram
-abline(h=MEDissThres, col = "red")
+
 # Call an automatic merging function
 merge = mergeCloseModules(ovExpr, dynamicColors, cutHeight = MEDissThres, verbose = 3)
 # The merged module colors
@@ -205,10 +198,12 @@ ovMEs = merge$newMEs;
 
 png(file = "./results/2_Clustering_Tree_OV.png",width=10,height=10,units="in",res=1200);
 plotDendroAndColors(ovGeneTree, cbind(dynamicColors, ovModuleColors),
-                    c("Dynamic Tree Cut", "Merged dynamic"),
+                    c("Dynamic Tree Cut", "Merged Dynamic"),
                     main = "Gene Dendrogram and Module Colors - OV",
                     dendroLabels = FALSE, hang = 0.03,
                     addGuide = TRUE, guideHang = 0.05)
+# Plot the cut line into the dendrogram
+abline(h=MEDissThres, col = "red")
 dev.off()
 
 
@@ -237,8 +232,7 @@ dynamicColors = labels2colors(dynamicMods)
 table(dynamicColors)
 
 MEDissThres = 0.25
-# Plot the cut line into the dendrogram
-abline(h=MEDissThres, col = "red")
+
 # Call an automatic merging function
 merge = mergeCloseModules(brcaExpr, dynamicColors, cutHeight = MEDissThres, verbose = 3)
 # The merged module colors
@@ -246,13 +240,14 @@ brcaModuleColors = merge$colors;
 # Eigengenes of the new merged modules:
 brcaMEs = merge$newMEs;
 
-sizeGrWindow(12, 9)
 png(file = "./results/2_Clustering_Tree_BRCA.png",width=10,height=10,units="in",res=1200);
 plotDendroAndColors(brcaGeneTree, cbind(dynamicColors, brcaModuleColors),
-                    c("Dynamic Tree Cut", "Merged dynamic"),
+                    c("Dynamic Tree Cut", "Merged Dynamic"),
                     main = "Gene Dendrogram and Module Colors - BRCA",
                     dendroLabels = FALSE, hang = 0.03,
                     addGuide = TRUE, guideHang = 0.05)
+# Plot the cut line into the dendrogram
+abline(h=MEDissThres, col = "red")
 dev.off()
 
 

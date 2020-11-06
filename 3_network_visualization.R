@@ -18,7 +18,7 @@ allowWGCNAThreads()
 
 # Load the expression and trait data saved in the first part
 lnames = load(file = "./Routput/1-dataInput.RData");
-#The variable lnames contains the names of loaded variables.
+# The variable lnames contains the names of loaded variables.
 lnames
 # Load network data saved in the second part.
 lnames = load(file = "./Routput/2-networkConstruction.RData");
@@ -35,7 +35,7 @@ png(file = "./results/3_Network_heatmap_GBM.png",width=10,height=10,units="in",r
 plotDiss = gbmDissTOM^7;
 diag(plotDiss) = NA;
 myheatcol = colorpanel(250,'red',"orange",'lemonchiffon')
-TOMplot(plotDiss, gbmGeneTree, gbmModuleColors, main = "Network Heatmap Plot - GBM, All Genes", col=myheatcol)
+TOMplot(plotDiss, gbmGeneTree, gbmModuleColors, main = "Network Heatmap Plot - GBM", col=myheatcol)
 dev.off()
 
 
@@ -63,7 +63,8 @@ png(file = "./results/3_Network_heatmap_OV.png",width=10,height=10,units="in",re
 # the color palette; setting the diagonal to NA also improves the clarity of the plot
 plotDiss = ovDissTOM^7;
 diag(plotDiss) = NA;
-TOMplot(plotDiss, ovGeneTree, ovModuleColors, main = "Network Heatmap Plot - OV, All Genes", col=myheatcol)
+myheatcol = colorpanel(250,'red',"orange",'lemonchiffon')
+TOMplot(plotDiss, ovGeneTree, ovModuleColors, main = "Network Heatmap Plot - OV", col=myheatcol)
 dev.off()
 
 ###Visualizing the network of eigengenes######
@@ -91,7 +92,8 @@ png(file = "./results/3_Network_heatmap_BRCA.png",width=10,height=10,units="in",
 # the color palette; setting the diagonal to NA also improves the clarity of the plot
 plotDiss = brcaDissTOM^7;
 diag(plotDiss) = NA;
-TOMplot(plotDiss, brcaGeneTree, brcaModuleColors, main = "Network Heatmap Plot - BRCA, All Genes")
+myheatcol = colorpanel(250,'red',"orange",'lemonchiffon')
+TOMplot(plotDiss, brcaGeneTree, brcaModuleColors, main = "Network Heatmap Plot - BRCA", col=myheatcol)
 dev.off()
 
 ###Visualizing the network of eigengenes######
