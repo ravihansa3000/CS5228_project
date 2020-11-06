@@ -72,7 +72,7 @@ Name | [grey_cyan_genes.txt](results/4_BRCA_GBM_Intersection_P0.999999996738616_
 Gene module pair with highest p-value | 0.999999996738616 | 0.999999978350642 | 0.999999999999291
 Gene count in top module pair | 14 | 11 | 35
 topGO plot | [grey_cyan_topGO.pdf](results/4_BRCA_GBM_Intersection_grey_cyan_topGOPlot_fullnames.pdf) | [lightcyan_brown_topGO.pdf](results/4_GBM_OV_Intersection_lightcyan_brown_topGOPlot_fullnames.pdf) | [grey_black_topGO.pdf](results/4_OV_BRCA_Intersection_grey_black_topGOPlot_fullnames.pdf)
-topGO analysis | [grey_cyan_topGO.csv](results/4_BRCA_GBM_Intersection_grey_cyan_summary_topGO_analysis.csv) | [lightcyan_brown_topGO.csv](results/results/4_GBM_OV_Intersection_lightcyan_brown_summary_topGO_analysis.csv) | [grey_black_topGO.csv](results/4_OV_BRCA_Intersection_grey_black_summary_topGO_analysis.csv)
+topGO analysis | [grey_cyan_topGO.csv](results/4_BRCA_GBM_Intersection_grey_cyan_summary_topGO_analysis.csv) | [lightcyan_brown_topGO.csv](results/4_GBM_OV_Intersection_lightcyan_brown_summary_topGO_analysis.csv) | [grey_black_topGO.csv](results/4_OV_BRCA_Intersection_grey_black_summary_topGO_analysis.csv)
 |||
 |||
 --- Union --- |||
