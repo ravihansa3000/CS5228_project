@@ -7,6 +7,7 @@ setwd(workingDir);
 # Load the WGCNA package
 library(WGCNA);
 library(genefilter)
+source("utility_functions.R")
 
 # The following setting is important, do not omit.
 options(stringsAsFactors = FALSE);
@@ -24,21 +25,14 @@ dim(rawGBM);
 dim(rawOV);
 dim(rawBRCA);
 
+filteredGBM = filteringGeneDataset(rawGBM, 0.5)
+filteredOV = filteringGeneDataset(rawOV, 0.5)
+filteredBRCA = filteringGeneDataset(rawBRCA, 0.5)
 
-x<- as.matrix(rawGBM)
-filteredGBM<- genefilter::varFilter(x, var.func = IQR, 
-            var.cutoff = 0.5, filterByQuantile = TRUE)
 dim(filteredGBM)
-
-y<- as.matrix(rawOV)
-filteredOV<- genefilter::varFilter(y, var.func = IQR, 
-            var.cutoff = 0.5, filterByQuantile = TRUE)
 dim(filteredOV)
-
-z<- as.matrix(rawBRCA)
-filteredBRCA<- genefilter::varFilter(z, var.func = IQR, 
-            var.cutoff = 0.5, filterByQuantile = TRUE)
 dim(filteredBRCA)
+
 
 gbmExpr = as.data.frame(t(filteredGBM[,]))
 dim(gbmExpr)
