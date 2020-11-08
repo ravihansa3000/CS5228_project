@@ -1,0 +1,51 @@
+GO.ID Term Annotated Significant Expected weightFisher p.adj
+GO:0001525 angiogenesis 355 73 20.23 2.4e-11 0
+GO:0007156 homophilic cell adhesion via plasma memb... 147 25 8.38 6.8e-07 0.0046
+GO:0001938 positive regulation of endothelial cell ... 60 15 3.42 9.8e-07 0.0046
+GO:0030198 extracellular matrix organization 311 54 17.72 2.7e-06 0.0094
+GO:0051895 negative regulation of focal adhesion as... 10 6 0.57 5.7e-06 0.0158
+GO:0001666 response to hypoxia 187 25 10.66 6.8e-06 0.0158
+GO:0030324 lung development 132 20 7.52 1.6e-05 0.0319
+GO:0016525 negative regulation of angiogenesis 77 16 4.39 2.3e-05 0.0401
+GO:0002040 sprouting angiogenesis 80 20 4.56 3.0e-05 0.0465
+GO:0043116 negative regulation of vascular permeabi... 14 6 0.8 6.7e-05 0.0935
+GO:0060021 roof of mouth development 62 13 3.53 0.00011 0.1396
+GO:0001957 intramembranous ossification 6 4 0.34 0.00014 0.1629
+GO:0070374 positive regulation of ERK1 and ERK2 cas... 132 19 7.52 0.00016 0.1718
+GO:0055096 low-density lipoprotein particle mediate... 3 3 0.17 0.00018 0.1768
+GO:0014068 positive regulation of phosphatidylinosi... 63 12 3.59 0.00019 0.1768
+GO:0045766 positive regulation of angiogenesis 121 22 6.89 0.00024 0.2094
+GO:0032233 positive regulation of actin filament bu... 35 6 1.99 0.00032 0.2628
+GO:2000352 negative regulation of endothelial cell ... 18 6 1.03 0.00034 0.2637
+GO:0048701 embryonic cranial skeleton morphogenesis 31 8 1.77 0.00036 0.2645
+GO:0050919 negative chemotaxis 43 11 2.45 0.00039 0.2722
+GO:0071711 basement membrane organization 25 8 1.42 0.00050 0.33
+GO:0010744 positive regulation of macrophage derive... 13 5 0.74 0.00052 0.33
+GO:0038084 vascular endothelial growth factor signa... 29 8 1.65 0.00059 0.354
+GO:0051897 positive regulation of protein kinase B ... 113 16 6.44 0.00062 0.354
+GO:0030335 positive regulation of cell migration 323 45 18.4 0.00064 0.354
+GO:0051414 response to cortisol 4 3 0.23 0.00070 0.354
+GO:0048014 Tie signaling pathway 4 3 0.23 0.00070 0.354
+GO:0001701 in utero embryonic development 181 16 10.31 0.00071 0.354
+GO:0043536 positive regulation of blood vessel endo... 27 9 1.54 0.00074 0.3562
+GO:0007155 cell adhesion 1040 103 59.26 0.00085 0.3955
+GO:0006112 energy reserve metabolic process 43 8 2.45 0.00102 0.4537
+GO:0048251 elastic fiber assembly 9 4 0.51 0.00104 0.4537
+GO:0048146 positive regulation of fibroblast prolif... 39 8 2.22 0.00134 0.5669
+GO:0001822 kidney development 212 28 12.08 0.00153 0.6049
+GO:0048846 axon extension involved in axon guidance 32 9 1.82 0.00164 0.6049
+GO:0032060 bleb assembly 10 4 0.57 0.00166 0.6049
+GO:0010886 positive regulation of cholesterol stora... 5 3 0.28 0.00169 0.6049
+GO:0042118 endothelial cell activation 5 3 0.28 0.00169 0.6049
+GO:0010754 negative regulation of cGMP-mediated sig... 5 3 0.28 0.00169 0.6049
+GO:0022617 extracellular matrix disassembly 54 12 3.08 0.00211 0.7364
+GO:0014032 neural crest cell development 58 11 3.3 0.00240 0.8172
+GO:0001886 endothelial cell morphogenesis 11 4 0.63 0.00249 0.8276
+GO:0007507 heart development 346 49 19.72 0.00260 0.8441
+GO:0042632 cholesterol homeostasis 53 9 3.02 0.00275 0.8534
+GO:0050878 regulation of body fluid levels 311 27 17.72 0.00313 0.8534
+GO:0002043 blood vessel endothelial cell proliferat... 16 6 0.91 0.00318 0.8534
+GO:0003181 atrioventricular valve morphogenesis 17 6 0.97 0.00318 0.8534
+GO:0061298 retina vasculature development in camera... 16 5 0.91 0.00320 0.8534
+GO:0001542 ovulation from ovarian follicle 6 3 0.34 0.00323 0.8534
+GO:0150094 amyloid-beta clearance by cellular catab... 6 3 0.34 0.00323 0.8534

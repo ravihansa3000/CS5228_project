@@ -1,0 +1,14 @@
+black
+pink
+brown
+purple
+blue
+salmon
+magenta
+greenyellow
+red
+green
+cyan
+tan
+yellow
+grey

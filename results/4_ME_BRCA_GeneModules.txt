@@ -1,0 +1,11 @@
+turquoise
+greenyellow
+lightcyan
+blue
+black
+grey60
+midnightblue
+salmon
+cyan
+green
+grey

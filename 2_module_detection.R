@@ -129,14 +129,13 @@ table(dynamicMods)
 # Convert numeric lables into colors
 dynamicColors = labels2colors(dynamicMods)
 table(dynamicColors)
-# Plot the dendrogram and colors underneath
-#plotDendroAndColors(gbmGeneTree, dynamicColors, "Dynamic Tree Cut",
-#                    dendroLabels = FALSE, hang = 0.03,
-#                    addGuide = TRUE, guideHang = 0.05,
-#                    main = "Gene Dendrogram and Module Colors - GBM")
-
-########################################
 MEDissThres = 0.25
+
+png(file = "./results/2_Clustering_Tree_ME_GBM.png", width=7, height=7, units="in", res=800);
+plot(gbmGeneTree, main = "Clustering of Module Eigengenes - GBM", xlab = "", sub = "")
+# Plot the cut line into the dendrogram
+abline(h=MEDissThres, col = "red")
+dev.off()
 
 # Call an automatic merging function
 merge = mergeCloseModules(gbmExpr, dynamicColors, cutHeight = MEDissThres, verbose = 3)
@@ -145,14 +144,12 @@ gbmModuleColors = merge$colors;
 # Eigengenes of the new merged modules:
 gbmMEs = merge$newMEs;
 
-png(file = "./results/2_Clustering_Tree_GBM.png",width=10,height=10,units="in",res=1200);
+png(file = "./results/2_Clustering_Tree_Genes_GBM.png",width=7,height=7,units="in",res=800);
 plotDendroAndColors(gbmGeneTree, cbind(dynamicColors, gbmModuleColors),
                     c("Dynamic Tree Cut", "Merged Dynamic"),
-                    main = "Gene Dendrogram and Module Colors - GBM",
+                    main = "Cluster Dendrogram and Module Colors - GBM",
                     dendroLabels = FALSE, hang = 0.03,
                     addGuide = TRUE, guideHang = 0.05)
-# Plot the cut line into the dendrogram
-abline(h=MEDissThres, col = "red")
 dev.off()
 
 ############# OV ##################################################################################################
@@ -174,19 +171,17 @@ dynamicMods = cutreeDynamic(dendro = ovGeneTree, distM = ovDissTOM,
                             deepSplit = 2, pamRespectsDendro = FALSE,
                             minClusterSize = minModuleSize);
 table(dynamicMods)
-#####################################3
+
 # Convert numeric lables into colors
 dynamicColors = labels2colors(dynamicMods)
 table(dynamicColors)
-# Plot the dendrogram and colors underneath
-#sizeGrWindow(8,6)
-#plotDendroAndColors(ovGeneTree, dynamicColors, "Dynamic Tree Cut",
-#                    dendroLabels = FALSE, hang = 0.03,
-#                    addGuide = TRUE, guideHang = 0.05,
-#                    main = "Gene dendrogram and module colors")
-
-########################################
 MEDissThres = 0.25
+
+png(file = "./results/2_Clustering_Tree_ME_OV.png", width=7, height=7, units="in", res=800);
+plot(ovGeneTree, main = "Clustering of Module Eigengenes - OV", xlab = "", sub = "")
+# Plot the cut line into the dendrogram
+abline(h=MEDissThres, col = "red")
+dev.off()
 
 # Call an automatic merging function
 merge = mergeCloseModules(ovExpr, dynamicColors, cutHeight = MEDissThres, verbose = 3)
@@ -196,14 +191,12 @@ ovModuleColors = merge$colors;
 ovMEs = merge$newMEs;
 
 
-png(file = "./results/2_Clustering_Tree_OV.png",width=10,height=10,units="in",res=1200);
+png(file = "./results/2_Clustering_Tree_Genes_OV.png", width=7, height=7, units="in", res=800);
 plotDendroAndColors(ovGeneTree, cbind(dynamicColors, ovModuleColors),
                     c("Dynamic Tree Cut", "Merged Dynamic"),
                     main = "Gene Dendrogram and Module Colors - OV",
                     dendroLabels = FALSE, hang = 0.03,
                     addGuide = TRUE, guideHang = 0.05)
-# Plot the cut line into the dendrogram
-abline(h=MEDissThres, col = "red")
 dev.off()
 
 
@@ -233,6 +226,12 @@ table(dynamicColors)
 
 MEDissThres = 0.25
 
+png(file = "./results/2_Clustering_Tree_ME_BRCA.png", width=7, height=7, units="in", res=800);
+plot(brcaGeneTree, main = "Clustering of Module Eigengenes - BRCA", xlab = "", sub = "")
+# Plot the cut line into the dendrogram
+abline(h=MEDissThres, col = "red")
+dev.off()
+
 # Call an automatic merging function
 merge = mergeCloseModules(brcaExpr, dynamicColors, cutHeight = MEDissThres, verbose = 3)
 # The merged module colors
@@ -240,14 +239,12 @@ brcaModuleColors = merge$colors;
 # Eigengenes of the new merged modules:
 brcaMEs = merge$newMEs;
 
-png(file = "./results/2_Clustering_Tree_BRCA.png",width=10,height=10,units="in",res=1200);
+png(file = "./results/2_Clustering_Tree_Genes_BRCA.png", width=7, height=7, units="in", res=800);
 plotDendroAndColors(brcaGeneTree, cbind(dynamicColors, brcaModuleColors),
                     c("Dynamic Tree Cut", "Merged Dynamic"),
                     main = "Gene Dendrogram and Module Colors - BRCA",
                     dendroLabels = FALSE, hang = 0.03,
                     addGuide = TRUE, guideHang = 0.05)
-# Plot the cut line into the dendrogram
-abline(h=MEDissThres, col = "red")
 dev.off()
 
 

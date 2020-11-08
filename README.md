@@ -10,12 +10,14 @@ TRAN KHANH HUNG – A0212253W
 
 - WGCNA
 
-Weighted gene correlation network analysis (WGCNA) is a powerful method that uses a topological overlap module approach for constructing co-expression networks based on gene expression data. This method involves reconstructing gene co-expression modules and summarizing modules using module eigengenes (ME) and intramodular hub genes.
+Weighted gene correlation network analysis (WGCNA) is a powerful method that uses a topological overlap module approach 
+for constructing co-expression networks based on gene expression data. This method involves reconstructing 
+gene co-expression modules and summarizing modules using module eigengenes (ME) and intramodular hub genes.
 
 - Gene Enrichment and Pathway Analysis
 
-Biologically interesting modules were identified using Fisher's exact test. The overlapping and union sets of genes from theses interesting gene module pairs were 
-subjected to Gene Set Enrichment Analysis using topGO package).
+Biologically interesting modules were identified using Fisher's exact test. The overlapping and union sets of 
+genes from theses interesting gene module pairs were subjected to Gene Set Enrichment Analysis using topGO package).
 
 ## Dataset
 
@@ -44,13 +46,12 @@ Scale Free Topology Model       |  Mean Connectivity      | Selected Soft Thresh
 
 ### Clustering Tree
 
-![GBM](results/2_Clustering_Tree_GBM.png)
-<br/><br/>
+Genes       |      Module Eigengenes
+:-------------------------:|:-------------------------:
+![GBM](results/2_Clustering_Tree_Genes_GBM.png) | ![GBM](results/2_Clustering_Tree_ME_GBM.png)
+![GBM](results/2_Clustering_Tree_Genes_OV.png) | ![GBM](results/2_Clustering_Tree_ME_OV.png)
+![GBM](results/2_Clustering_Tree_Genes_BRCA.png) | ![GBM](results/2_Clustering_Tree_ME_BRCA.png)
 
-![GBM](results/2_Clustering_Tree_OV.png)
-<br/><br/>
-
-![GBM](results/2_Clustering_Tree_BRCA.png)
 <br/><br/>
 
 ### Gene Expression Network
@@ -62,25 +63,39 @@ Network Heatmap       |      Eigengene Adjacency Heatmap      |      Eigengene D
 ![](results/3_Network_heatmap_BRCA.png) |  ![](results/3_Eigengene_heatmap_BRCA.png) |  ![](results/3_Eigengene_dendrogram_BRCA.png)
 
 
-### Overlapping Genes in Gene Modules
+### Pairwise Analysis of Gene Modules
+
+## Overview
 
 Item                     | BRCA and GBM               |  GBM and OV               | OV and BRCA
 :-----------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 |||
 --- Intersection --- |||
-Name | [grey_cyan_genes.txt](results/4_BRCA_GBM_Intersection_P0.999999996738616_grey_cyan_genes.txt) | [lightcyan_brown_genes.txt](results/4_GBM_OV_Intersection_P0.999999978350642_lightcyan_brown_genes.txt) | [grey_black_genes.txt](results/4_OV_BRCA_Intersection_P0.999999999999291_grey_black_genes.txt) 
-Gene module pair with highest p-value | 0.999999996738616 | 0.999999978350642 | 0.999999999999291
-Gene count in top module pair | 14 | 11 | 35
-topGO plot | [grey_cyan_topGO.pdf](results/4_BRCA_GBM_Intersection_grey_cyan_topGOPlot_fullnames.pdf) | [lightcyan_brown_topGO.pdf](results/4_GBM_OV_Intersection_lightcyan_brown_topGOPlot_fullnames.pdf) | [grey_black_topGO.pdf](results/4_OV_BRCA_Intersection_grey_black_topGOPlot_fullnames.pdf)
-topGO analysis | [grey_cyan_topGO.csv](results/4_BRCA_GBM_Intersection_grey_cyan_summary_topGO_analysis.csv) | [lightcyan_brown_topGO.csv](results/4_GBM_OV_Intersection_lightcyan_brown_summary_topGO_analysis.csv) | [grey_black_topGO.csv](results/4_OV_BRCA_Intersection_grey_black_summary_topGO_analysis.csv)
+Name | [black_lightcyan_genes.txt](results/4_BRCA_GBM_lowP_Intersection_P0_black_lightcyan_genes.txt) | [lightcyan_red_genes.txt](results/4_GBM_OV_lowP_Intersection_P0_lightcyan_red_genes.txt) | [grey_grey_genes.txt](results/4_OV_BRCA_lowP_Intersection_P0_grey_grey_genes.txt) 
+Lowest p-value | 0 | 0 | 0
+Gene count in the most significant (lowest pvalue) module pair | 557 | 864 | 1577
+topGO plot | [topGO.pdf](results/4_BRCA_GBM_lowP_Intersection_black_lightcyan_topGOPlot_fullnames.pdf) | [topGO.pdf](results/4_GBM_OV_lowP_Intersection_lightcyan_red_topGOPlot_fullnames.pdf) | [topGO.pdf](results/4_OV_BRCA_lowP_Intersection_grey_grey_topGOPlot_fullnames.pdf)
+topGO analysis | [topGO.csv](results/4_BRCA_GBM_lowP_Intersection_black_lightcyan_summary_topGO_analysis.csv) | [topGO.csv](results/4_GBM_OV_lowP_Intersection_lightcyan_red_summary_topGO_analysis.csv) | [topGO.csv](results/4_OV_BRCA_lowP_Intersection_grey_grey_summary_topGO_analysis.csv)
 |||
 |||
 --- Union --- |||
-Name | [grey_cyan_txt](results/4_BRCA_GBM_Union_P0.999999996738616_grey_cyan_genes.txt) | [lightcyan_brown_genes.txt](results/4_GBM_OV_Union_P0.999999978350642_lightcyan_brown_genes.txt) | [grey_black_genes.txt](results/4_OV_BRCA_Union_P0.999999999999291_grey_black_genes.txt)
-Gene module pair with highest p-value | 0.999999996738616 | 0.999999978350642 | 0.999999999999291
-Gene count in top module pair | 6066 | 1949 | 3262
-topGO plot | [grey_cyan_topGP.pdf](results/4_BRCA_GBM_Union_grey_cyan_topGOPlot_fullnames.pdf) | [lightcyan_brown_topGO.pdf](results/4_GBM_OV_Union_lightcyan_brown_topGOPlot_fullnames.pdf) | [grey_black_topGO.pdf](results/4_OV_BRCA_Union_grey_black_topGOPlot_fullnames.pdf)
-topGO analysis | [grey_cyan_topGO.csv](results/4_BRCA_GBM_Union_grey_cyan_summary_topGO_analysis.csv) | [lightcyan_brown_topGO.csv](results/4_GBM_OV_Union_lightcyan_brown_summary_topGO_analysis.csv) | [grey_black_topGO.csv](results/4_OV_BRCA_Union_grey_black_summary_topGO_analysis.csv)
+Name | [black_lightcyan_genes.txt](results/4_BRCA_GBM_lowP_Union_P0_black_lightcyan_genes.txt) | [lightcyan_red_genes.txt](results/4_GBM_OV_lowP_Union_P0_lightcyan_red_genes.txt) | [grey_grey_genes.txt](results/4_OV_BRCA_lowP_Union_P0_grey_grey_genes.txt)
+Lowest p-value | 0 | 0 | 0
+Gene count in top module pair | 1546 | 3377 | 6766
+topGO plot | [topGP.pdf](results/4_BRCA_GBM_lowP_Union_black_lightcyan_topGOPlot_fullnames.pdf) | [topGO.pdf](results/4_GBM_OV_lowP_Union_lightcyan_red_topGOPlot_fullnames.pdf) | [topGO.pdf](results/results/4_OV_BRCA_lowP_Union_grey_grey_topGOPlot_fullnames.pdf)
+topGO analysis | [topGO.csv](results/4_BRCA_GBM_lowP_Union_black_lightcyan_summary_topGO_analysis.csv) | [topGO.csv](results/4_GBM_OV_lowP_Union_lightcyan_red_summary_topGO_analysis.csv) | [topGO.csv](results/4_OV_BRCA_lowP_Union_grey_grey_summary_topGO_analysis.csv)
+
+
+## Heatmaps of Overlap (Across Cancer Types)
+
+![BRCA_GBM](results/5_BRCA_GBM_heatmap_gene_module_pairs.png)
+<br/><br/>
+
+![GBM_OV](results/5_GBM_OV_heatmap_gene_module_pairs.png)
+<br/><br/>
+
+![OV_BRCA](results/5_OV_BRCA_heatmap_gene_module_pairs.png)
+<br/><br/>
 
 
 ## Project Structure and Run Instructions

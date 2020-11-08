@@ -1,0 +1,51 @@
+GO.ID Term Annotated Significant Expected weightFisher p.adj
+GO:0007601 visual perception 150 42 21.97 5.2e-05 0.4537
+GO:0010862 positive regulation of pathway-restricte... 33 14 4.83 0.00010 0.4537
+GO:0007223 Wnt signaling pathway, calcium modulatin... 20 11 2.93 0.00011 0.4537
+GO:0003184 pulmonary valve morphogenesis 16 9 2.34 0.00013 0.4537
+GO:0060395 SMAD protein signal transduction 49 16 7.18 0.00022 0.5584
+GO:0002088 lens development in camera-type eye 55 20 8.06 0.00024 0.5584
+GO:0043401 steroid hormone mediated signaling pathw... 53 10 7.76 0.00028 0.5584
+GO:0090103 cochlea morphogenesis 19 9 2.78 0.00069 1
+GO:0016338 calcium-independent cell-cell adhesion v... 19 9 2.78 0.00069 1
+GO:0003180 aortic valve morphogenesis 23 10 3.37 0.00081 1
+GO:0007416 synapse assembly 136 27 19.92 0.00085 1
+GO:0003148 outflow tract septum morphogenesis 20 9 2.93 0.00110 1
+GO:0050911 detection of chemical stimulus involved ... 24 10 3.52 0.00120 1
+GO:0009566 fertilization 96 26 14.06 0.00141 1
+GO:0003272 endocardial cushion formation 18 7 2.64 0.00202 1
+GO:0036109 alpha-linolenic acid metabolic process 5 4 0.73 0.00202 1
+GO:0051898 negative regulation of protein kinase B ... 18 8 2.64 0.00230 1
+GO:0043651 linoleic acid metabolic process 11 6 1.61 0.00232 1
+GO:0006367 transcription initiation from RNA polyme... 65 20 9.52 0.00243 1
+GO:0061072 iris morphogenesis 8 5 1.17 0.00254 1
+GO:2001256 regulation of store-operated calcium ent... 8 5 1.17 0.00254 1
+GO:0021986 habenula development 3 3 0.44 0.00313 1
+GO:0051795 positive regulation of timing of catagen 3 3 0.44 0.00313 1
+GO:0070370 cellular heat acclimation 3 3 0.44 0.00313 1
+GO:0003215 cardiac right ventricle morphogenesis 15 7 2.2 0.00406 1
+GO:0030182 neuron differentiation 870 123 127.43 0.00478 1
+GO:0048011 neurotrophin TRK receptor signaling path... 18 7 2.64 0.00502 1
+GO:0042416 dopamine biosynthetic process 9 5 1.32 0.00503 1
+GO:0030216 keratinocyte differentiation 99 19 14.5 0.00506 1
+GO:0006646 phosphatidylethanolamine biosynthetic pr... 6 4 0.88 0.00536 1
+GO:0060037 pharyngeal system development 18 9 2.64 0.00657 1
+GO:0007156 homophilic cell adhesion via plasma memb... 147 33 21.53 0.00691 1
+GO:0030154 cell differentiation 2380 350 348.59 0.00827 1
+GO:0006590 thyroid hormone generation 16 9 2.34 0.00876 1
+GO:0048468 cell development 1334 196 195.39 0.00898 1
+GO:0007602 phototransduction 35 14 5.13 0.01007 1
+GO:0070830 bicellular tight junction assembly 46 14 6.74 0.01025 1
+GO:0071300 cellular response to retinoic acid 45 13 6.59 0.01025 1
+GO:0007271 synaptic transmission, cholinergic 27 8 3.95 0.01032 1
+GO:0032869 cellular response to insulin stimulus 102 18 14.94 0.01052 1
+GO:0038180 nerve growth factor signaling pathway 7 4 1.03 0.01107 1
+GO:0035799 ureter maturation 4 3 0.59 0.01117 1
+GO:0060017 parathyroid gland development 4 3 0.59 0.01117 1
+GO:0035910 ascending aorta morphogenesis 4 3 0.59 0.01117 1
+GO:0060686 negative regulation of prostatic bud for... 4 3 0.59 0.01117 1
+GO:0061743 motor learning 4 3 0.59 0.01117 1
+GO:0015842 aminergic neurotransmitter loading into ... 4 3 0.59 0.01117 1
+GO:0090082 positive regulation of heart induction b... 4 3 0.59 0.01117 1
+GO:0072289 metanephric nephron tubule formation 4 3 0.59 0.01117 1
+GO:0042446 hormone biosynthetic process 59 15 8.64 0.01415 1
