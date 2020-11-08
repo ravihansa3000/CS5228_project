@@ -13,7 +13,7 @@ generateGeneModuleHeatmap <- function(pval_matrix, title, prefix)
   myCol <- c("gray15", "gray25", "blue", "green", "yellow", "orange", "gray25", "gray15")
   # Defining breaks for the color scale
   myBreaks <- c(-1, -0.06, -0.05, -0.001, 0, 0.001, 0.05, 0.06, 1)
-  png(file = paste0(prefix, "_heatmap_gene_module_pairs.png"), width = 7, height = 7, units = "in", res = 800);
+  png(file = paste0(prefix, "_heatmap_gene_module_pairs.png"), width = 1200, height = 1000);
   par(cex.main = 0.8)
   heatmap.2(
     pval_matrix, scale = "none", Rowv = T, Colv = T,
@@ -22,9 +22,9 @@ generateGeneModuleHeatmap <- function(pval_matrix, title, prefix)
     symkey = FALSE,
     main = title,
     key.title = "",
-    margins = c(5, 2), cexRow = 0.2, cexCol = 0.2, key = FALSE, keysize = 1.5,
+    margins = c(3, 3), cexRow = 1, cexCol = 1, key = FALSE, keysize = 1,
     trace = "none")
-  legend("topleft", fill = myCol, cex = 0.5, xpd = TRUE, lty = 1, lwd = 1,
+  legend("topleft", fill = myCol, cex = 1, xpd = TRUE, lty = 1, lwd = 1,
          legend = c(">0.6", "0.6 to 0.05", "0.049 to 0.001 (OR <1)", "0.001 to 0 (OR <1)", "0 to 0.001 (OR >1)",
                     "0.001 to 0.049 (OR >1)", "0.05 to 0.6", ">0.6"))
   dev.off()

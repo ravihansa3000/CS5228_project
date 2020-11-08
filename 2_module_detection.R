@@ -250,14 +250,6 @@ dev.off()
 
 ###########################################################################################################
 
-# png(file = "./results/2_Clustering_Tree_ALL.png",width=10,height=10,units="in",res=1200);
-# plotDendroAndColors(cbind(gbmModuleColors, ovModuleColors, brcaModuleColors),
-#                     c("GBM", "OV", "BRCA"),
-#                     main = "Gene Dendrogram and Module Colors - All",
-#                     dendroLabels = FALSE, hang = 0.03,
-#                     addGuide = TRUE, guideHang = 0.05)
-# dev.off()
-
 # Construct numerical labels corresponding to the colors
 colorOrder = c("grey", standardColors(50));
 gbmModuleLabels = match(gbmModuleColors, colorOrder)-1;
