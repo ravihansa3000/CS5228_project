@@ -18,7 +18,7 @@ options(stringsAsFactors = FALSE);
 allowWGCNAThreads()
 
 # Load the data saved in the first part
-lnames = load(file = "./Routput/1-dataInput.RData");
+lnames = load(file = "./Routput/1_dataInput.RData");
 #The variable lnames contains the names of loaded variables.
 lnames
 dim(gbmExpr)
@@ -36,18 +36,18 @@ cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
 plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit (signed R^2)",type="n",
-     main = paste("Scale Independence"));
+     main = paste("Scale Independence - GBM"));
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
-abline(h=0.90,col="red")
+abline(h=0.90, col="red")
 dev.off()
 
 # Mean connectivity as a function of the soft-thresholding power
 png(file = "./results/2_Mean_Connectivity_GBM.png", width = 600, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
      xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
-     main = paste("Mean Connectivity"))
+     main = paste("Mean Connectivity - GBM"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 dev.off()
 
@@ -62,18 +62,18 @@ cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
 plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit (signed R^2)",type="n",
-     main = paste("Scale Independence"));
+     main = paste("Scale Independence - OV"));
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
-abline(h=0.90,col="red")
+abline(h=0.90, col="red")
 dev.off()
 
 # Mean connectivity as a function of the soft-thresholding power
 png(file = "./results/2_Mean_Connectivity_OV.png", width = 600, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
      xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
-     main = paste("Mean Connectivity"))
+     main = paste("Mean Connectivity - OV"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 dev.off()
 
@@ -88,18 +88,18 @@ cex1 = 0.9;
 # Scale-free topology fit index as a function of the soft-thresholding power
 plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit (signed R^2)",type="n",
-     main = paste("Scale Independence"));
+     main = paste("Scale Independence - BRCA"));
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      labels=powers,cex=cex1,col="red");
 # this line corresponds to using an R^2 cut-off of h
-abline(h=0.90,col="red")
+abline(h=0.90, col="red")
 dev.off()
 
 # Mean connectivity as a function of the soft-thresholding power
 png(file = "./results/2_Mean_Connectivity_BRCA.png", width = 600, height = 700);
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
      xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
-     main = paste("Mean Connectivity"))
+     main = paste("Mean Connectivity - BRCA"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 dev.off()
 
@@ -154,7 +154,7 @@ dev.off()
 
 ############# OV ##################################################################################################
 ##Co-expression similarity and adjacency
-softPower = 6;
+softPower = 3;
 adjacency = adjacency(ovExpr, power = softPower);
 
 # Turn adjacency into topological overlap
@@ -202,7 +202,7 @@ dev.off()
 
 ############# BRCA ##################################################################################################
 ##Co-expression similarity and adjacency
-softPower = 12;
+softPower = 6;
 adjacency = adjacency(brcaExpr, power = softPower);
 
 # Turn adjacency into topological overlap
@@ -260,4 +260,6 @@ brcaModuleLabels = match(brcaModuleColors, colorOrder)-1;
 save(gbmMEs, gbmModuleLabels, gbmModuleColors, gbmGeneTree, gbmDissTOM,
      ovMEs, ovModuleLabels, ovModuleColors, ovGeneTree, ovDissTOM,
      brcaMEs, brcaModuleLabels, brcaModuleColors, brcaGeneTree, brcaDissTOM,
-     file = "./Routput/2-networkConstruction.RData")
+     file = "./Routput/2_networkConstruction.RData")
+
+collectGarbage()

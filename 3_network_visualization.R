@@ -17,11 +17,11 @@ allowWGCNAThreads()
 
 
 # Load the expression and trait data saved in the first part
-lnames = load(file = "./Routput/1-dataInput.RData");
+lnames = load(file = "./Routput/1_dataInput.RData");
 # The variable lnames contains the names of loaded variables.
 lnames
 # Load network data saved in the second part.
-lnames = load(file = "./Routput/2-networkConstruction.RData");
+lnames = load(file = "./Routput/2_networkConstruction.RData");
 lnames
 nGenes = ncol(gbmExpr)
 nSamples = nrow(gbmExpr)

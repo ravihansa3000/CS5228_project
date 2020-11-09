@@ -9,8 +9,8 @@ library(GeneOverlap)
 source("utility_functions.R")
 
 #### load data from previous steps ####
-lnames = load(file = "./Routput/1-dataInput.RData");
-lnames = load(file = "./Routput/2-networkConstruction.RData");
+lnames = load(file = "./Routput/1_dataInput.RData");
+lnames = load(file = "./Routput/2_networkConstruction.RData");
 
 dim(gbmExpr)
 dim(ovExpr)
@@ -31,7 +31,7 @@ ov_brca_gene_overlap = findGeneOverlap(ovExpr, brcaExpr, ovModuleColors, brcaMod
 
 # Save gene overlap data
 save(ov_brca_gene_overlap, gbm_ov_gene_overlap, brca_gbm_gene_overlap,
-     file = "./Routput/4-geneOverlap.RData")
+     file = "./Routput/4_geneOverlap.RData")
 
 
 #### set background gene set ####
@@ -40,13 +40,13 @@ bg_genes = names(gbmExpr)
 
 #### find significant gene module pairs (lowest p-value)
 geneOverlap_ToFile("./results/4_GBM_OV_lowP", gbm_ov_gene_overlap, FALSE)
-gbm_ov_topGOEnrichment_lowP = topGO_GeneEnrichment(bg_genes, gbm_ov_gene_overlap, FALSE)
-topGO_GeneEnrichment_ToFile("./results/4_GBM_OV_lowP", gbm_ov_topGOEnrichment_lowP)
+#gbm_ov_topGOEnrichment_lowP = topGO_GeneEnrichment(bg_genes, gbm_ov_gene_overlap, FALSE)
+#topGO_GeneEnrichment_ToFile("./results/4_GBM_OV_lowP", gbm_ov_topGOEnrichment_lowP)
 
 geneOverlap_ToFile("./results/4_OV_BRCA_lowP", ov_brca_gene_overlap, FALSE)
-ov_brca_topGOEnrichment_lowP = topGO_GeneEnrichment(bg_genes, ov_brca_gene_overlap, FALSE)
-topGO_GeneEnrichment_ToFile("./results/4_OV_BRCA_lowP", ov_brca_topGOEnrichment_lowP)
+#ov_brca_topGOEnrichment_lowP = topGO_GeneEnrichment(bg_genes, ov_brca_gene_overlap, FALSE)
+#topGO_GeneEnrichment_ToFile("./results/4_OV_BRCA_lowP", ov_brca_topGOEnrichment_lowP)
 
 geneOverlap_ToFile("./results/4_BRCA_GBM_lowP", brca_gbm_gene_overlap, FALSE)
-brca_gbm_topGOEnrichment_lowP = topGO_GeneEnrichment(bg_genes, brca_gbm_gene_overlap, FALSE)
-topGO_GeneEnrichment_ToFile("./results/4_BRCA_GBM_lowP", brca_gbm_topGOEnrichment_lowP)
+#brca_gbm_topGOEnrichment_lowP = topGO_GeneEnrichment(bg_genes, brca_gbm_gene_overlap, FALSE)
+#topGO_GeneEnrichment_ToFile("./results/4_BRCA_GBM_lowP", brca_gbm_topGOEnrichment_lowP)

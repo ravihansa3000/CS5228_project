@@ -37,11 +37,19 @@ https://tcga.xenahubs.net/download/TCGA.BRCA.sampleMap/HiSeqV2_PANCAN.gz
 
 ###  Data Exploration 
 
+Description     |     BRCA      |  GBM      | OV
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+Filter threshold (CV) | 0.75 | 0.55 | 0.55
+Sample Clustering Dendrogram |  ![](results/1_Sample_Clustering_BRCA.png)  |  ![](results/1_Sample_Clustering_GBM.png) |  ![](results/1_Sample_Clustering_OV.png)
+Number of gene modules | 11 | 16 | 14
+
+<br/><br/>
+
 Scale Free Topology Model       |  Mean Connectivity      | Selected Soft Threshold
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](results/2_SFTM_Fit_GBM.png)  |  ![](results/2_Mean_Connectivity_GBM.png) | 9
-![](results/2_SFTM_Fit_OV.png)  |  ![](results/2_Mean_Connectivity_OV.png) | 6
-![](results/2_SFTM_Fit_BRCA.png)  |  ![](results/2_Mean_Connectivity_BRCA.png) | 12
+![](results/2_SFTM_Fit_OV.png)  |  ![](results/2_Mean_Connectivity_OV.png) | 3
+![](results/2_SFTM_Fit_BRCA.png)  |  ![](results/2_Mean_Connectivity_BRCA.png) | 6
 
 
 ### Clustering Tree
@@ -71,11 +79,11 @@ Item                     | BRCA and GBM               |  GBM and OV             
 :-----------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 |||
 --- Intersection --- |||
-Name | [black_lightcyan_genes.txt](results/4_BRCA_GBM_lowP_Intersection_P0_black_lightcyan_genes.txt) | [lightcyan_red_genes.txt](results/4_GBM_OV_lowP_Intersection_P0_lightcyan_red_genes.txt) | [grey_grey_genes.txt](results/4_OV_BRCA_lowP_Intersection_P0_grey_grey_genes.txt) 
+Name | [black_lightcyan_genes.txt](results/4_BRCA_GBM_lowP_Intersection_P0_black_lightcyan_genes.txt) | [red_brown_genes.txt](results/4_GBM_OV_lowP_Intersection_P0_2-1_red_brown_genes.txt) | [grey_grey_genes.txt](results/4_OV_BRCA_lowP_Intersection_P2.79145715716079e-171_7-7_green_green_genes.txt) 
 Lowest p-value | 0 | 0 | 0
-Gene count in the most significant (lowest pvalue) module pair | 557 | 864 | 1577
-topGO plot | [topGO.pdf](results/4_BRCA_GBM_lowP_Intersection_black_lightcyan_topGOPlot_fullnames.pdf) | [topGO.pdf](results/4_GBM_OV_lowP_Intersection_lightcyan_red_topGOPlot_fullnames.pdf) | [topGO.pdf](results/4_OV_BRCA_lowP_Intersection_grey_grey_topGOPlot_fullnames.pdf)
-topGO analysis | [topGO.csv](results/4_BRCA_GBM_lowP_Intersection_black_lightcyan_summary_topGO_analysis.csv) | [topGO.csv](results/4_GBM_OV_lowP_Intersection_lightcyan_red_summary_topGO_analysis.csv) | [topGO.csv](results/4_OV_BRCA_lowP_Intersection_grey_grey_summary_topGO_analysis.csv)
+Gene count in the most significant (lowest pvalue) module pair | 557 | 864 | 195
+topGO plot | [topGO.pdf](results/4_BRCA_GBM_lowP_Intersection_black_lightcyan_topGOPlot_fullnames.pdf) | [topGO.pdf](results/4_GBM_OV_lowP_Intersection_lightcyan_red_topGOPlot_fullnames.pdf) | [topGO.pdf](results/4_OV_BRCA_lowP_Intersection_green_green_topGOPlot_fullnames.pdf)
+topGO analysis | [topGO.csv](results/4_BRCA_GBM_lowP_Intersection_black_lightcyan_summary_topGO_analysis.csv) | [topGO.csv](results/4_GBM_OV_lowP_Intersection_lightcyan_red_summary_topGO_analysis.csv) | [topGO.csv](results/4_OV_BRCA_lowP_Intersection_green_green_summary_topGO_analysis.csv)
 |||
 |||
 --- Union --- |||
