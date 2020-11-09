@@ -1,0 +1,17 @@
+blue
+midnightblue
+lightcyan
+red
+brown
+salmon
+cyan
+magenta
+green
+greenyellow
+black
+turquoise
+grey60
+tan
+pink
+yellow
+grey

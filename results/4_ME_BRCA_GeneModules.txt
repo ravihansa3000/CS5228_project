@@ -1,0 +1,11 @@
+blue
+red
+green
+cyan
+salmon
+brown
+lightcyan
+magenta
+midnightblue
+purple
+grey
