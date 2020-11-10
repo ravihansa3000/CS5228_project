@@ -125,6 +125,8 @@ geneOverlap_VennDiagram <- function(prefix, set_name1, set_name2, geneOverlapOjb
 geneOverlap_ToFile <- function(prefix, geneOverlapOjb, high_pvalue = TRUE) {
   positionGeneList = geneOverlapOjb$positionList
   modulePairList = geneOverlapOjb$modulePairList
+  uniqueGeneAList = geneOverlapOjb$uniqueGeneAList 
+  uniqueGeneBList = geneOverlapOjb$uniqueGeneBList
   unionListGeneList = geneOverlapOjb$unionList
   intersectionGeneList = geneOverlapOjb$intersectionList
 
@@ -166,6 +168,29 @@ geneOverlap_ToFile <- function(prefix, geneOverlapOjb, high_pvalue = TRUE) {
       file.remove(fileName)
     }
     lapply(candidate_list, write, fileName, append = TRUE, ncolumns = 30000)
+  }
+  
+  for (v in geneOverlapOrder)
+  {
+	pValue = v[[1]]
+	idx = v[[2]]
+	idx_i = v[[3]]
+    idx_j = v[[4]]
+	
+	module_labels = modulePairList[[idx]] 
+		
+	fileNameA = paste(prefix, "_UniqueA_P",pValue, "_", idx_i, "-", idx_j, "_" , module_labels[[1]], "_genes.txt", sep="")
+	fileNameB = paste(prefix, "_UniqueB_P",pValue, "_", idx_i, "-", idx_j, "_" , module_labels[[2]], "_genes.txt", sep="")
+		
+	if (file.exists(fileNameA)) {
+		file.remove(fileNameA)
+	}
+	lapply(uniqueGeneAList[[idx]], write, fileNameA, append=TRUE, ncolumns=30000)
+		
+	if (file.exists(fileNameB)) {
+		file.remove(fileNameB)
+	}
+	lapply(uniqueGeneBList[[idx]], write, fileNameB, append=TRUE, ncolumns=30000)
   }
 
 }
