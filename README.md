@@ -39,9 +39,11 @@ https://tcga.xenahubs.net/download/TCGA.BRCA.sampleMap/HiSeqV2_PANCAN.gz
 
 Description     |     BRCA      |  GBM      | OV
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-Filter threshold (CV) | 0.75 | 0.55 | 0.55
+Filter threshold (CV) | 0.5 | 0.5 | 0.5
 Sample Clustering Dendrogram |  ![](results/1_Sample_Clustering_BRCA.png)  |  ![](results/1_Sample_Clustering_GBM.png) |  ![](results/1_Sample_Clustering_OV.png)
-Number of gene modules | 11 | 16 | 14
+deepSplit | 4 | 4 | 4
+minClusterSize | 30 | 30 | 30
+Number of gene modules | 17 | 22 | 25
 
 <br/><br/>
 
@@ -49,7 +51,7 @@ Scale Free Topology Model       |  Mean Connectivity      | Selected Soft Thresh
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](results/2_SFTM_Fit_GBM.png)  |  ![](results/2_Mean_Connectivity_GBM.png) | 9
 ![](results/2_SFTM_Fit_OV.png)  |  ![](results/2_Mean_Connectivity_OV.png) | 3
-![](results/2_SFTM_Fit_BRCA.png)  |  ![](results/2_Mean_Connectivity_BRCA.png) | 6
+![](results/2_SFTM_Fit_BRCA.png)  |  ![](results/2_Mean_Connectivity_BRCA.png) | 12
 
 
 ### Clustering Tree
@@ -79,25 +81,28 @@ Item                     | BRCA and GBM               |  GBM and OV             
 :-----------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 |||
 --- Intersection --- |||
-Name | [purple_lightcyan_genes.txt](results/4_BRCA_GBM_lowP_Intersection_P0_10-15_purple_lightcyan_genes.txt) | [green_brown_genes.txt](results/4_GBM_OV_lowP_Intersection_P0_4-5_green_brown_genes.txt) | [green_brown_genes.txt](results/4_OV_BRCA_lowP_Intersection_P1.17748161583022e-198_9-6_green_brown_genes.txt) 
-Lowest p-value | 0 | 0 | 1.1774
-Gene count in the most significant (lowest pvalue) module pair | 461 | 398 | 234
+Name | [yellow_lightyellow_genes.txt](results/4_BRCA_GBM_lowP_Intersection_P0_9-5_yellow_lightyellow_genes.txt) | [lightyellow_turquoise_genes.txt](results/4_GBM_OV_lowP_Intersection_P0_5-16_lightyellow_turquoise_genes.txt) | [turquoise_yellow_genes.txt](results/4_OV_BRCA_lowP_Intersection_P0_16-9_turquoise_yellow_genes.txt) 
+Lowest p-value | 0 | 0 | 0
 |||
 |||
---- Union --- |||
-Name | [purple_lightcyan_genes.txt](results/4_BRCA_GBM_lowP_Union_P0_10-15_purple_lightcyan_genes.txt) | [green_brown_genes.txt](results/4_GBM_OV_lowP_Union_P0_4-5_green_brown_genes.txt) | [green_brown_genes.txt](results/4_OV_BRCA_lowP_Union_P1.17748161583022e-198_9-6_green_brown_genes.txt)
-Lowest p-value | 0 | 0 | 1.774
-Gene count in top module pair | 1613 | 1200 | 1051
+--- Unique (A) --- |||
+Name | [yellow_genes.txt](results/4_BRCA_GBM_lowP_UniqueA_P0_9-5_yellow_genes.txt) | [lightyellow_genes.txt](results/4_GBM_OV_lowP_UniqueA_P0_5-16_lightyellow_genes.txt) | [turquoise_genes.txt](results/4_OV_BRCA_lowP_UniqueA_P0_16-9_turquoise_genes.txt)
+Lowest p-value | 0 | 0 | 0
+|||
+|||
+--- Unique (B) --- |||
+Name | [lightyellow_genes.txt](results/4_BRCA_GBM_lowP_UniqueB_P0_9-5_lightyellow_genes.txt) | [turquoise_genes.txt](results/4_GBM_OV_lowP_UniqueB_P0_5-16_turquoise_genes.txt) | [yellow_genes.txt](results/4_OV_BRCA_lowP_UniqueB_P0_16-9_yellow_genes.txt)
+Lowest p-value | 0 | 0 | 0
 
 <br/><br/>
 
 
-## Gene Overlap across module pairs
+## Gene Overlap Across Module Pairs
 
 BRCA and GBM               |  GBM and OV               | OV and BRCA
 :-------------------------:|:-------------------------:|:-------------------------:
 ![BRCA_GBM](results/5_BRCA_GBM_heatmap_gene_module_pairs.png)  |  ![GBM_OV](results/5_GBM_OV_heatmap_gene_module_pairs.png) |  ![OV_BRCA](results/5_OV_BRCA_heatmap_gene_module_pairs.png)
-![BRCA_GBM](results/4_Venn_Diagram_BRCA_GBM_lowP0_Gene_Overlap_Modules_purple_purple.png)  |  ![GBM_OV](results/4_Venn_Diagram_GBM_OV_lowP0_Gene_Overlap_Modules_green_green.png) |  ![OV_BRCA](results/4_Venn_Diagram_OV_BRCA_lowP1.17748161583022e-198_Gene_Overlap_Modules_green_green.png)
+![BRCA_GBM](results/4_Venn_Diagram_BRCA_GBM_lowP0_Gene_Overlap_Modules_yellow_yellow.png)  |  ![GBM_OV](results/4_Venn_Diagram_GBM_OV_lowP0_Gene_Overlap_Modules_black_black.png) |  ![OV_BRCA](results/4_Venn_Diagram_OV_BRCA_lowP0_Gene_Overlap_Modules_turquoise_turquoise.png)
 
 <br/><br/>
 

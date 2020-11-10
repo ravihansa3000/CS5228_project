@@ -27,7 +27,7 @@ dim(rawBRCA);
 
 filteredGBM = filteringGeneDataset(rawGBM, 0.5)
 filteredOV = filteringGeneDataset(rawOV, 0.5)
-filteredBRCA = filteringGeneDataset(rawBRCA, 0.7)
+filteredBRCA = filteringGeneDataset(rawBRCA, 0.5)
 
 dim(filteredGBM)
 dim(filteredOV)

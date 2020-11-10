@@ -118,17 +118,18 @@ geneOverlap_VennDiagram <- function(prefix, set_name1, set_name2, geneOverlapOjb
 		venn_pairs <- list()
 		venn_pairs[[set1]] = geneA 
 		venn_pairs[[set2]] = geneB
+
 		all_venn_pairs[[set1]] = geneA 
 		all_venn_pairs[[set2]] = geneB
 
 		#file = paste(dir, set_name1, "_", set_name2,"_",pName,pValue,"_Gene_Overlap_Modules_Venn_Diagram", module_labels[[1]], "_",module_labels[[1]],".png",sep="")
 		png(file = paste(prefix, "_Venn_Diagram_",set_name1, "_", set_name2,"_",pName,pValue,"_Gene_Overlap_Modules_", module_labels[[1]], "_",module_labels[[1]],".png",sep=""))
-		venn(venn_pairs, ilab=TRUE, zcolor = "style", plotsize = 15, ilcs = 1, sncs = 1, borders = TRUE)
+		venn(venn_pairs)
 		dev.off()
 	}
-	png(file = paste(prefix,  "_Venn_Diagram_", set_name1, "_", set_name2, "_top3_",pName,"_Gene_Overlap_Modules.png",sep=""))
-	venn(all_venn_pairs, ilab=TRUE, zcolor = "style", plotsize = 15, ilcs = 1, sncs = 1, borders = TRUE)
-	dev.off()
+	#png(file = paste(prefix,  "_Venn_Diagram_", set_name1, "_", set_name2, "_top3_",pName,"_Gene_Overlap_Modules.png",sep=""))
+	#venn(all_venn_pairs, ilab=TRUE, zcolor = "style", plotsize = 15, ilcs = 1, sncs = 1, borders = TRUE)
+	#dev.off()
 }
 
 geneOverlap_ToFile <- function(prefix, geneOverlapOjb, high_pvalue = TRUE) {
