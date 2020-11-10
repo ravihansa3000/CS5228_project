@@ -1,14 +1,3 @@
-library(topGO)
-library(GO.db)
-library(biomaRt)
-library(Rgraphviz)
-library(igraph)
-library(edgeR)
-library(WGCNA)
-library(GeneOverlap)
-library(venn)
-
-
 source("utility_functions.R")
 
 #### load data from previous steps ####
