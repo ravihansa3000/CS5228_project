@@ -122,7 +122,7 @@ gbmGeneTree = hclust(as.dist(gbmDissTOM), method = "average");
 minModuleSize = 30;
 # Module identification using dynamic tree cut:
 dynamicMods = cutreeDynamic(dendro = gbmGeneTree, distM = gbmDissTOM,
-                            deepSplit = 4, pamRespectsDendro = FALSE,
+                            deepSplit = 3, pamRespectsDendro = FALSE,
                             minClusterSize = minModuleSize);
 table(dynamicMods)
 
@@ -168,7 +168,7 @@ ovGeneTree = hclust(as.dist(ovDissTOM), method = "average");
 minModuleSize = 30;
 # Module identification using dynamic tree cut:
 dynamicMods = cutreeDynamic(dendro = ovGeneTree, distM = ovDissTOM,
-                            deepSplit = 4, pamRespectsDendro = FALSE,
+                            deepSplit = 3, pamRespectsDendro = FALSE,
                             minClusterSize = minModuleSize);
 table(dynamicMods)
 
@@ -202,7 +202,7 @@ dev.off()
 
 ############# BRCA ##################################################################################################
 ##Co-expression similarity and adjacency
-softPower = 12;
+softPower = 6;
 adjacency = adjacency(brcaExpr, power = softPower);
 
 # Turn adjacency into topological overlap
@@ -216,7 +216,7 @@ brcaGeneTree = hclust(as.dist(brcaDissTOM), method = "average");
 minModuleSize = 30;
 # Module identification using dynamic tree cut:
 dynamicMods = cutreeDynamic(dendro = brcaGeneTree, distM = brcaDissTOM,
-                            deepSplit = 4, pamRespectsDendro = FALSE,
+                            deepSplit = 3, pamRespectsDendro = FALSE,
                             minClusterSize = minModuleSize);
 table(dynamicMods)
 
